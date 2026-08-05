@@ -3,11 +3,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { contentBySlug, contentPages } from "../content";
 import { CookiePreferencesButton } from "../CookieConsent";
-import { CheckCircle2, Facebook, Instagram, Mail, Phone } from "lucide-react";
-import { absoluteUrl, emailHref, leadFormAction, phoneHref, siteConfig, whatsappHref } from "../site-config";
+import { CheckCircle2, Facebook, Instagram, Mail } from "lucide-react";
+import { absoluteUrl, emailHref, leadFormAction, leadHref, leadSubject, siteConfig, whatsappHref } from "../site-config";
 
 const seoH1BySlug: Record<string, string> = {
-  "vakantieverhuur-torremolinos": "Vakantieverhuur in Torremolinos vanaf 18%",
+  "vakantieverhuur-torremolinos": "Vakantieverhuur in Torremolinos",
   "midterm-verhuur-torremolinos": "Midterm verhuur in Torremolinos",
   "langetermijnverhuur-torremolinos": "Langetermijnverhuur in Torremolinos",
   "vastgoedbeheer-torremolinos": "Vastgoedbeheer in Torremolinos",
@@ -161,6 +161,74 @@ const relatedBySlug: Record<string, string[]> = {
     "kosten-verhuurbeheer-torremolinos",
     "zelf-verhuren-of-verhuurbeheer",
   ],
+  "zelf-verhuren-of-verhuurbeheer": [
+    "vakantieverhuur-torremolinos",
+    "vastgoedbeheer-torremolinos",
+    "kosten-verhuurbeheer-torremolinos",
+  ],
+  "schoonmaak-onderhoud-torremolinos": [
+    "vakantieverhuur-torremolinos",
+    "vastgoedbeheer-torremolinos",
+    "renovatie-inrichting-torremolinos",
+  ],
+  "renovatie-inrichting-torremolinos": [
+    "vastgoedbeheer-torremolinos",
+    "schoonmaak-onderhoud-torremolinos",
+    "vakantieverhuur-torremolinos",
+  ],
+  werkwijze: [
+    "vakantieverhuur-torremolinos",
+    "vastgoedbeheer-torremolinos",
+    "kosten-verhuurbeheer-torremolinos",
+  ],
+};
+
+const contextualLinksBySlug: Record<
+  string,
+  { href: string; label: string }[]
+> = {
+  "vakantieverhuur-torremolinos": [
+    { href: "/dynamische-prijzen-vakantiewoning/", label: "dynamische prijsstrategie voor uw vakantiewoning" },
+    { href: "/verhuurlicentie-torremolinos/", label: "voorwaarden voor een verhuurlicentie in Torremolinos" },
+    { href: "/kosten-verhuurbeheer-torremolinos/", label: "kosten van verhuurbeheer in Torremolinos" },
+  ],
+  "midterm-verhuur-torremolinos": [
+    { href: "/langetermijnverhuur-torremolinos/", label: "langetermijnverhuur in Torremolinos" },
+    { href: "/vastgoedbeheer-torremolinos/", label: "lokaal vastgoedbeheer tijdens leegstand" },
+  ],
+  "langetermijnverhuur-torremolinos": [
+    { href: "/midterm-verhuur-torremolinos/", label: "flexibele midterm verhuur in Torremolinos" },
+    { href: "/vastgoedbeheer-torremolinos/", label: "doorlopend woningbeheer in Torremolinos" },
+  ],
+  "vastgoedbeheer-torremolinos": [
+    { href: "/schoonmaak-onderhoud-torremolinos/", label: "schoonmaak en onderhoud in Torremolinos" },
+    { href: "/vakantieverhuur-torremolinos/", label: "fullservice vakantieverhuurbeheer" },
+  ],
+  "schoonmaak-onderhoud-torremolinos": [
+    { href: "/vastgoedbeheer-torremolinos/", label: "vastgoedbeheer voor uw tweede woning" },
+    { href: "/renovatie-inrichting-torremolinos/", label: "renovatie en inrichting van uw woning" },
+  ],
+  "renovatie-inrichting-torremolinos": [
+    { href: "/vastgoedbeheer-torremolinos/", label: "vastgoedbeheer na de oplevering" },
+    { href: "/vakantieverhuur-torremolinos/", label: "uw woning professioneel laten verhuren" },
+  ],
+  "kosten-verhuurbeheer-torremolinos": [
+    { href: "/vakantieverhuur-torremolinos/", label: "wat fullservice vakantieverhuur omvat" },
+    { href: "/midterm-verhuur-torremolinos/", label: "kosten en aanpak van midterm verhuur" },
+    { href: "/langetermijnverhuur-torremolinos/", label: "bemiddeling bij langetermijnverhuur" },
+  ],
+  "dynamische-prijzen-vakantiewoning": [
+    { href: "/vakantieverhuur-torremolinos/", label: "professioneel vakantieverhuurbeheer in Torremolinos" },
+    { href: "/kosten-verhuurbeheer-torremolinos/", label: "de volledige kosten van verhuurbeheer" },
+  ],
+  "zelf-verhuren-of-verhuurbeheer": [
+    { href: "/vakantieverhuur-torremolinos/", label: "fullservice verhuurbeheer vergelijken" },
+    { href: "/werkwijze/", label: "onze werkwijze voor eigenaren" },
+  ],
+  "verhuurlicentie-torremolinos": [
+    { href: "/vakantieverhuur-torremolinos/", label: "vakantieverhuur professioneel laten beheren" },
+    { href: "/zelf-verhuren-of-verhuurbeheer/", label: "zelf verhuren of beheer uitbesteden" },
+  ],
 };
 
 const contentVisualBySlug: Record<string, { src: string; alt: string }> = {
@@ -169,27 +237,27 @@ const contentVisualBySlug: Record<string, { src: string; alt: string }> = {
     alt: "Luxe vakantiewoning in Torremolinos met lichte woonkamer en uitzicht op zee",
   },
   "midterm-verhuur-torremolinos": {
-    src: "/luxe-interieur-torremolinos.webp",
+    src: "/woning-interieur-estepona.webp",
     alt: "Licht ingericht appartement voor seizoens- en midtermverhuur in Torremolinos",
   },
   "langetermijnverhuur-torremolinos": {
-    src: "/luxe-interieur-torremolinos.webp",
+    src: "/zonnig-terras-zeezicht-estepona.webp",
     alt: "Verzorgd interieur van een woning voor langetermijnverhuur in Torremolinos",
   },
   "vastgoedbeheer-torremolinos": {
-    src: "/villa-zwembad-torremolinos.webp",
+    src: "/urbanisatie-zwembad-estepona.webp",
     alt: "Zwembad en mediterrane tuin bij een professioneel beheerde villa in Torremolinos",
   },
   "schoonmaak-onderhoud-torremolinos": {
-    src: "/luxe-interieur-torremolinos.webp",
+    src: "/luxe-interieur-estepona.webp",
     alt: "Schoon en verzorgd interieur van een beheerde woning in Torremolinos",
   },
   "renovatie-inrichting-torremolinos": {
-    src: "/terras-zonsondergang-torremolinos.webp",
+    src: "/torremolinos-property.webp",
     alt: "Luxe terras van een ingerichte woning in Torremolinos bij zonsondergang",
   },
   werkwijze: {
-    src: "/zonnig-terras-zeezicht-torremolinos.webp",
+    src: "/terras-zonsondergang-estepona.webp",
     alt: "Zonnig terras van een beheerde vakantiewoning in Torremolinos met zeezicht",
   },
 };
@@ -199,19 +267,19 @@ const blogVisualBySlug: Record<
   { src: string; alt: string; category: string; readTime: string }
 > = {
   "kosten-verhuurbeheer-torremolinos": {
-    src: "/vastgoed-aan-zee-torremolinos.webp",
+    src: "/vastgoed-aan-zee-estepona.webp",
     alt: "Woningen aan zee bij Torremolinos als illustratie bij de kosten van verhuurbeheer",
     category: "Kosten & tarieven",
     readTime: "4 min",
   },
   "dynamische-prijzen-vakantiewoning": {
-    src: "/luxe-woning-torremolinos-zeezicht.webp",
+    src: "/luxe-torremolinos-property.webp",
     alt: "Luxe vakantiewoning met zeezicht in Torremolinos voor een blog over dynamische prijzen",
     category: "Opbrengst",
     readTime: "4 min",
   },
   "zelf-verhuren-of-verhuurbeheer": {
-    src: "/luxe-interieur-torremolinos.webp",
+    src: "/woning-interieur-estepona.webp",
     alt: "Verzorgd interieur van een vakantiewoning bij een blog over zelf verhuren of uitbesteden",
     category: "Keuzehulp",
     readTime: "5 min",
@@ -250,7 +318,7 @@ export default async function ContentRoute({
     url: absoluteUrl(),
     logo: {
       "@type": "ImageObject",
-      url: absoluteUrl("/verhuurbeheer-torremolinos-logo.png"),
+      url: absoluteUrl("/verhuurbeheer-torremolinos-logo.svg"),
     },
   };
   const pageSchema =
@@ -265,7 +333,7 @@ export default async function ContentRoute({
           image: absoluteUrl("/torremolinos-hero.webp"),
           inLanguage: "nl-NL",
           datePublished: "2026-08-02",
-          dateModified: "2026-08-02",
+          dateModified: "2026-08-03",
           author: organization,
           publisher: organization,
         }
@@ -278,16 +346,8 @@ export default async function ContentRoute({
           inLanguage: "nl-NL",
           provider: organization,
           areaServed: [
-            { "@type": "City", name: "Torremolinos" },
-            { "@type": "Place", name: "Selwo" },
-            { "@type": "Place", name: "New Golden Mile" },
-            { "@type": "Place", name: "Cancelada" },
-            { "@type": "Place", name: "Atalaya" },
-            { "@type": "Place", name: "El Paraíso" },
-            { "@type": "Place", name: "Benamara" },
-            { "@type": "Place", name: "Costalita" },
-            { "@type": "City", name: "Casares" },
-            { "@type": "City", name: "Manilva" },
+            { "@type": "City", name: siteConfig.location.city },
+            ...siteConfig.location.areas.map((name) => ({ "@type": "Place", name })),
           ],
         };
   const breadcrumbSchema = {
@@ -347,6 +407,7 @@ export default async function ContentRoute({
     .map((relatedSlug) => contentBySlug[relatedSlug])
     .filter(Boolean);
   const contentVisual = contentVisualBySlug[page.slug];
+  const contextualLinks = contextualLinksBySlug[page.slug] ?? [];
   const blogArticles = contentPages.filter(
     (article) => article.type === "gids" && blogVisualBySlug[article.slug],
   );
@@ -443,7 +504,7 @@ export default async function ContentRoute({
           <a href="/blog/">Blog</a>
           <a href="/contact/">Contact</a>
         </nav>
-        <a className="button button-outline header-cta" href="/contact/">
+        <a className="button button-outline header-cta" href={leadHref}>
           Woning aanmelden
         </a>
         <details className="mobile-menu">
@@ -467,7 +528,7 @@ export default async function ContentRoute({
             <a href="/over-ons/">Over ons</a>
             <a href="/blog/">Blog & kennisbank</a>
             <a href="/contact/">Contact</a>
-            <a href="/contact/">Woning aanmelden</a>
+            <a href="/woning-aanmelden/">Woning aanmelden</a>
           </div>
         </details>
       </header>
@@ -489,8 +550,8 @@ export default async function ContentRoute({
           <p className="eyebrow">{page.eyebrow}</p>
           <h1>{displayTitle}</h1>
           <p>{page.intro}</p>
-          {page.slug !== "contact" && (
-            <a className="button button-primary" href="/contact/">
+          {page.slug !== "contact" && page.slug !== "woning-aanmelden" && (
+            <a className="button button-primary" href="/woning-aanmelden/">
               Bespreek uw woning →
             </a>
           )}
@@ -514,8 +575,43 @@ export default async function ContentRoute({
           </span>
         ))}
       </section>
+      {page.slug === "woning-aanmelden" && (
+        <section className="signup-experience" id="woningformulier">
+          <div className="signup-story">
+            <p className="kicker orange">Uw woning in goede handen</p>
+            <h2>Een kleine eerste stap. Daarna regelen wij de rest.</h2>
+            <p>Vertel ons kort over uw woning. Binnen één werkdag neemt ons Nederlandstalige team persoonlijk contact met u op.</p>
+            <div className="signup-photo">
+              <img src={siteConfig.assets.signup} alt={`Zonnig terras met zeezicht in ${siteConfig.location.city}`} width="1600" height="1067" loading="eager" />
+              <span>Torremolinos · Costa del Sol</span>
+            </div>
+            <div className="signup-promises">
+              <span><CheckCircle2 aria-hidden="true" /><b>Vrijblijvend</b><small>U zit nergens aan vast</small></span>
+              <span><CheckCircle2 aria-hidden="true" /><b>Binnen 1 werkdag</b><small>Persoonlijk antwoord</small></span>
+              <span><CheckCircle2 aria-hidden="true" /><b>Nederlandstalig</b><small>Een helder gesprek</small></span>
+            </div>
+          </div>
+          <form className="signup-form" action={leadFormAction} method="post">
+            <div className="form-heading"><span>01</span><div><small>Uw woning aanmelden</small><h2>Vertel ons over uw woning</h2></div></div>
+            <input type="hidden" name="_subject" value={leadSubject()} />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
+            <input type="hidden" name="bron_website" value={siteConfig.template.sourceWebsite} />
+            <input type="hidden" name="bron_formulier" value="Woning aanmelden" />
+            <label>Naam<input name="naam" autoComplete="name" placeholder="Uw voor- en achternaam" required /></label>
+            <label>E-mailadres<input type="email" name="email" autoComplete="email" placeholder="naam@voorbeeld.nl" required /></label>
+            <label>Telefoonnummer <small>(optioneel)</small><input type="tel" name="telefoon" autoComplete="tel" placeholder="+31 of +34" /></label>
+            <label>Locatie woning<input name="locatie" placeholder="Bijv. La Carihuela, Playamar of Los Álamos" required /></label>
+            <label>Type woning<select name="type" defaultValue=""><option value="" disabled>Kies uw woningtype</option><option>Appartement</option><option>Villa</option><option>Townhouse</option><option>Anders</option></select></label>
+            <label>Waar kunnen we bij helpen?<select name="dienst" defaultValue=""><option value="" disabled>Kies een dienst</option><option>Vakantieverhuur</option><option>Seizoens- en midtermverhuur</option><option>Langetermijnverhuur</option><option>Vastgoedbeheer</option><option>Schoonmaak & onderhoud</option><option>Renovatie & inrichting</option><option>Ik wil graag advies</option></select></label>
+            <label className="wide">Vertel kort iets over uw woning en wensen <small>(optioneel)</small><textarea name="bericht" rows={4} placeholder="Bijvoorbeeld: aantal slaapkamers, eigen gebruik en gewenste startdatum" /></label>
+            <button className="btn wide form-cta" type="submit">Woning vrijblijvend aanmelden →</button>
+            <small className="wide privacy-note"><CheckCircle2 aria-hidden="true" /> Uw gegevens worden veilig verwerkt volgens onze <a href="/privacyverklaring/">privacyverklaring</a>.</small>
+          </form>
+        </section>
+      )}
       {page.slug === "contact" && (
-        <section className="contact contact-page-form" id="contactformulier">
+        <section className="contact contact-page-form" id="woningformulier">
           <div className="contact-intro">
             <p className="kicker">Persoonlijk kennismaken</p>
             <h2>Vertel ons over uw woning</h2>
@@ -531,13 +627,6 @@ export default async function ContentRoute({
                 <small>E-mail</small>
                 <strong>{siteConfig.contact.email}</strong>
               </a>
-              <a href={phoneHref}>
-                <span>
-                  <Phone aria-hidden="true" />
-                </span>
-                <small>Telefoon</small>
-                <strong>{siteConfig.contact.phoneDisplay}</strong>
-              </a>
             </div>
           </div>
           <form
@@ -546,6 +635,7 @@ export default async function ContentRoute({
           >
             <input type="hidden" name="_subject" value="Nieuwe lead via Verhuurbeheer Torremolinos – contactpagina" />
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
             <input type="hidden" name="bron_website" value="verhuurbeheertorremolinos.nl" />
             <input type="hidden" name="bron_formulier" value="Contactpagina" />
             <label>
@@ -564,7 +654,7 @@ export default async function ContentRoute({
               Locatie woning
               <input
                 name="locatie"
-                placeholder="Bijv. Torremolinos of Selwo"
+                placeholder="Bijv. Torremolinos of Playamar"
                 required
               />
             </label>
@@ -627,6 +717,9 @@ export default async function ContentRoute({
             <img
               src={blogVisualBySlug[featuredBlog.slug].src}
               alt={blogVisualBySlug[featuredBlog.slug].alt}
+              width="1600"
+              height="1067"
+              loading="eager"
             />
             <div>
               <span>
@@ -651,7 +744,7 @@ export default async function ContentRoute({
                   href={`/${article.slug}/`}
                   key={article.slug}
                 >
-                  <img src={visual.src} alt={visual.alt} loading="lazy" />
+                  <img src={visual.src} alt={visual.alt} width="1600" height="1067" loading="lazy" />
                   <div>
                     <span>
                       {visual.category} · {visual.readTime} lezen
@@ -672,6 +765,8 @@ export default async function ContentRoute({
               <img
                 src={contentVisual.src}
                 alt={contentVisual.alt}
+                width="1600"
+                height="1067"
                 loading="lazy"
               />
               <figcaption>
@@ -681,6 +776,18 @@ export default async function ContentRoute({
             </figure>
           )}
           <article className="article-body">
+            {contextualLinks.length > 0 && (
+              <nav className="contextual-links" aria-label="Verdiepende informatie">
+                <strong>Verdiep u verder:</strong>
+                <ul>
+                  {contextualLinks.map((link) => (
+                    <li key={link.href}>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
             {page.sections.map((s, i) => (
               <section key={s.title}>
                 <span>0{i + 1}</span>
@@ -740,7 +847,7 @@ export default async function ContentRoute({
             {team.map((person) => (
               <article className="team-card" key={person.name}>
                 <div className="team-photo">
-                  <img src={person.image} alt={person.alt} loading="lazy" />
+                  <img src={person.image} alt={person.alt} width="640" height="640" loading="lazy" />
                 </div>
                 <div>
                   <h3>{person.name}</h3>
@@ -768,7 +875,7 @@ export default async function ContentRoute({
           ))}
         </div>
       </section>
-      {page.slug !== "blog" && page.slug !== "contact" && (
+      {page.slug !== "blog" && page.slug !== "contact" && page.slug !== "woning-aanmelden" && (
         <section className="related">
           <p className="eyebrow">Lees ook</p>
           <h2>Meer voor eigenaren in Torremolinos</h2>
@@ -812,6 +919,7 @@ export default async function ContentRoute({
           >
             <input type="hidden" name="_subject" value={`Nieuwe lead via Verhuurbeheer Torremolinos – ${page.title}`} />
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
             <input type="hidden" name="bron_website" value="verhuurbeheertorremolinos.nl" />
             <input type="hidden" name="bron_formulier" value={`Kennisbank – ${page.title}`} />
             <input
@@ -835,7 +943,7 @@ export default async function ContentRoute({
               Locatie van uw woning
               <input
                 name="locatie"
-                placeholder="Bijv. Torremolinos, Casares of Manilva"
+                placeholder="Bijv. Playamar, La Carihuela of Los Álamos"
               />
             </label>
             <label className="wide">
@@ -851,7 +959,7 @@ export default async function ContentRoute({
           </form>
         </section>
       )}
-      {page.slug !== "contact" && (
+      {page.slug !== "contact" && page.slug !== "woning-aanmelden" && (
         <section className="content-cta">
           <p className="eyebrow">Vrijblijvend kennismaken</p>
           <h2>Wilt u weten welke aanpak bij uw woning past?</h2>
@@ -860,7 +968,7 @@ export default async function ContentRoute({
             Dan bespreken we de mogelijkheden voor beheer en verhuur in
             Torremolinos.
           </p>
-          <a className="button button-primary" href="/contact/">
+          <a className="button button-primary" href="/woning-aanmelden/">
             Vraag een verhuurindicatie aan →
           </a>
         </section>
