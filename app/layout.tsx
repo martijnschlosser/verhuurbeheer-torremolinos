@@ -61,7 +61,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: { icon: "/favicon.svg", apple: "/verhuurbeheer-torremolinos-logo.svg" },
+  icons: { icon: "/favicon.svg", apple: "/verhuurbeheer-torremolinos-logo.png" },
   manifest: "/manifest.webmanifest",
   category: "vastgoedbeheer",
   verification: siteConfig.analytics.searchConsoleVerification

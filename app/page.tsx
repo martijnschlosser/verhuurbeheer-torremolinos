@@ -158,7 +158,7 @@ export default function Home() {
     email: siteConfig.contact.email,
     telephone: siteConfig.contact.phoneE164,
     url: absoluteUrl(),
-    logo: absoluteUrl("/verhuurbeheer-torremolinos-logo.svg"),
+    logo: absoluteUrl("/verhuurbeheer-torremolinos-logo.png"),
     image: absoluteUrl("/luxe-woning-torremolinos-zeezicht.webp"),
     sameAs: [
       siteConfig.brand.parentUrl,
@@ -216,7 +216,7 @@ export default function Home() {
           aria-label="Verhuurbeheer Torremolinos – naar Home"
         >
           <img
-            src="/verhuurbeheer-torremolinos-logo.svg"
+            src="/verhuurbeheer-torremolinos-logo.png"
             alt="Logo Verhuurbeheer Torremolinos"
             width="54"
             height="54"
@@ -641,7 +641,7 @@ export default function Home() {
         <div className="footer-brand">
           <a className="logo-lockup" href="/" aria-label="Naar Home">
             <Image
-              src="/verhuurbeheer-torremolinos-logo.svg"
+              src="/verhuurbeheer-torremolinos-logo.png"
               alt="Verhuurbeheer Torremolinos"
               width={640}
               height={640}
