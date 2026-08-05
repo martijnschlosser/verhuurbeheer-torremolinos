@@ -318,7 +318,7 @@ export default async function ContentRoute({
     url: absoluteUrl(),
     logo: {
       "@type": "ImageObject",
-      url: absoluteUrl("/verhuurbeheer-torremolinos-logo.png"),
+      url: absoluteUrl("/verhuurbeheer-torremolinos-logo.png?v=torremolinos-20260805"),
     },
   };
   const pageSchema =
