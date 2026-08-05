@@ -29,7 +29,7 @@ export const siteConfig = {
     ],
   },
   assets: {
-    logo: "/verhuurbeheer-torremolinos-logo.png",
+    logo: "/verhuurbeheer-torremolinos-logo.png?v=torremolinos-20260805",
     hero: "/torremolinos-hero.webp",
     social: "/luxe-woning-torremolinos-zeezicht.webp",
     signup: "/zonnig-terras-zeezicht-torremolinos.webp",
