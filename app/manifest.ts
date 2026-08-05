@@ -10,6 +10,6 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#ffffff",
     theme_color: "#071d3a",
     lang: "nl",
-    icons: [{ src: "/verhuurbeheer-torremolinos-logo.png", sizes: "1254x1254", type: "image/png" }],
+    icons: [{ src: "/verhuurbeheer-torremolinos-logo.png?v=torremolinos-20260805", sizes: "1254x1254", type: "image/png" }],
   };
 }
