@@ -4,12 +4,12 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Verhuurbeheer Torremolinos",
     short_name: "VBE Torremolinos",
-    description: "Fullservice verhuurbeheer en vastgoedbeheer voor woningeigenaren in Torremolinos.",
+    description: "Fullservice verhuurbeheer en vastgoedbeheer in Torremolinos, Casares en Manilva.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#071d3a",
     lang: "nl",
-    icons: [{ src: "/verhuurbeheer-torremolinos-logo.svg", sizes: "any", type: "image/svg+xml" }],
+    icons: [{ src: "/verhuurbeheer-torremolinos-logo.svg", sizes: "640x640", type: "image/svg+xml" }],
   };
 }

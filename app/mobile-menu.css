@@ -6,4 +6,3 @@
 .mobile-menu>div a{padding:13px 12px;border-bottom:1px solid var(--line);color:var(--navy);font-size:14px;font-weight:800}
 .mobile-menu>div a:last-child{background:var(--orange);color:#fff;border:0;margin-top:8px}
 @media(max-width:950px){.site-header .mobile-menu,.content-header .mobile-menu{display:block}}
-

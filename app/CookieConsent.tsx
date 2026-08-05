@@ -31,4 +31,3 @@ export default function CookieConsent() {
     <div className="cookie-actions"><button type="button" className="cookie-reject" onClick={() => save(false, false)}>Alleen noodzakelijk</button><button type="button" className="cookie-accept" onClick={() => save(true, true)}>Alles accepteren</button></div>
   </aside>;
 }
-

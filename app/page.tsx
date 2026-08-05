@@ -14,8 +14,8 @@ import {
 import {
   absoluteUrl,
   emailHref,
-  leadHref,
   leadFormAction,
+  phoneHref,
   siteConfig,
   whatsappHref,
 } from "./site-config";
@@ -53,65 +53,65 @@ const services = [
     slug: "vakantieverhuur-torremolinos",
     price: siteConfig.pricing.holidayRental,
     icon: BedDouble,
-    text: "Wij bouwen de woningpresentatie op, sturen prijzen en kalenders aan en verzorgen alle communicatie en lokale wissels rondom gasten.",
+    text: "Volledig beheer van presentatie, boekingskanalen, dynamische prijzen, gastencommunicatie en de lokale uitvoering rond ieder verblijf.",
   },
   {
     title: "Seizoens- en midtermverhuur",
     slug: "midterm-verhuur-torremolinos",
     price: siteConfig.pricing.midterm,
     icon: CalendarDays,
-    text: "Een flexibele route voor overwinteraars en tijdelijke bewoners, met screening, duidelijke afspraken en een persoonlijke overdracht.",
+    text: "Gerichte verhuur voor tijdelijke verblijven, inclusief presentatie, huurdersselectie, afspraken en overdracht.",
   },
   {
     title: "Langetermijnverhuur",
     slug: "langetermijnverhuur-torremolinos",
     price: siteConfig.pricing.longterm,
     icon: KeyRound,
-    text: "We vinden een passende vaste huurder en begeleiden bezichtigingen, selectie, overeenkomst, borg en sleuteloverdracht.",
+    text: "Van woningpresentatie en bezichtigingen tot selectie, overeenkomst en een verzorgde sleuteloverdracht.",
   },
   {
     title: "Vastgoedbeheer",
     slug: "vastgoedbeheer-torremolinos",
     price: "Maatwerk",
     icon: ShieldCheck,
-    text: "Ook zonder verhuur houden we toezicht: periodieke controles, sleutelbeheer, leveranciersbezoek en opvolging van bijzonderheden.",
+    text: "Woningcontroles, sleutelbeheer, toegang voor leveranciers en praktische opvolging wanneer u niet in Spanje bent.",
   },
   {
     title: "Schoonmaak & onderhoud",
     slug: "schoonmaak-onderhoud-torremolinos",
     price: "Na woningcheck",
     icon: Sparkles,
-    text: "Lokale teams regelen wisselschoonmaak en linnen; bevindingen, kleine reparaties en onderhoud worden direct opgevolgd.",
+    text: "Wisselschoonmaak, linnen, inspecties en coördinatie van onderhoud door lokale partners rond Torremolinos.",
   },
   {
     title: "Renovatie & inrichting",
     slug: "renovatie-inrichting-torremolinos",
     price: "Offerte op maat",
     icon: Hammer,
-    text: "Van een gerichte opfrisbeurt tot complete inrichting of verbouwing, afgestemd op duurzaam gebruik en sterke verhuurpresentatie.",
+    text: "Praktische verbetering, inrichting en renovatie met verhuurbaarheid, duurzaamheid en uitstraling als uitgangspunt.",
   },
 ];
 
 const faqs = [
   [
     "Wat kost vakantieverhuurbeheer in Torremolinos?",
-    "Na een kennismaking en woningcheck ontvangt u een voorstel dat past bij de woning, de verhuurvorm en de gewenste dienstverlening. We leggen vooraf duidelijk vast wat inbegrepen is.",
+    "Onze fullservice beheervergoeding voor vakantieverhuur begint vanaf 18% van de gerealiseerde huurinkomsten. De exacte vergoeding hangt af van de woning, ligging en gewenste dienstverlening.",
   ],
   [
     "Wat kost midterm- of langetermijnverhuur?",
-    "Voor bemiddeling, selectie en plaatsing geldt een eenmalige vergoeding van één maand huur. Eventueel doorlopend beheer spreken we los daarvan af.",
+    "Voor het vinden en plaatsen van een passende huurder rekenen we eenmalig een fee ter hoogte van één maand huur.",
   ],
   [
     "Worden schoonmaakkosten van de huuropbrengst afgetrokken?",
-    "De normale eindschoonmaak en was worden bij vakantieverhuur aan de gast doorbelast. Een deep clean, schadeherstel of technisch onderhoud valt buiten die reguliere wissel.",
+    "Bij vakantieverhuur worden de reguliere schoonmaak- en waskosten aan de huurder doorberekend. Uitzonderlijk werk, deep cleaning, herstel of onderhoud valt daar niet automatisch onder.",
   ],
   [
     "Kan ik mijn woning zelf blijven gebruiken?",
-    "Zeker. We blokkeren uw eigen verblijven vooraf en stemmen de verhuurstrategie af op de periodes waarin u zelf naar Torremolinos wilt komen.",
+    "Ja. Bij vakantieverhuur kunnen eigen verblijven vooraf in de kalender worden geblokkeerd. We bespreken bij de start hoe u de woning zelf wilt blijven gebruiken.",
   ],
   [
     "Op welke verhuurplatforms wordt mijn woning aangeboden?",
-    "Per woning kiezen we de kanalen die passen bij doelgroep en verhuurvorm, waaronder Airbnb en Booking.com. Eén centraal kalenderbeheer voorkomt dubbele reserveringen.",
+    "Afhankelijk van de woning en strategie werken we met relevante kanalen zoals Airbnb, Booking.com en andere geschikte boekingsplatforms. Beschikbaarheid wordt centraal beheerd.",
   ],
   [
     "Verzorgen jullie ook alleen vastgoedbeheer?",
@@ -119,7 +119,7 @@ const faqs = [
   ],
   [
     "In welke delen van Torremolinos zijn jullie actief?",
-    "We ondersteunen eigenaren in onder meer Torremolinos Centro, Playamar, La Carihuela, Los Álamos, El Bajondillo, El Pinillo, La Colina en Montemar. De mogelijkheden worden altijd per woning en locatie beoordeeld.",
+    "We ondersteunen eigenaren in onder meer Torremolinos Centrum, Selwo, New Golden Mile, Cancelada, Atalaya, El Paraíso, Benamara en Costalita. De mogelijkheden worden altijd per woning en locatie beoordeeld.",
   ],
   [
     "Heb ik een verhuurlicentie nodig voor vakantieverhuur in Torremolinos?",
@@ -144,18 +144,19 @@ export default function Home() {
     },
     areaServed: [
       { "@type": "City", name: "Torremolinos" },
-      { "@type": "Place", name: "Torremolinos Centro" },
-      { "@type": "Place", name: "Playamar" },
-      { "@type": "Place", name: "La Carihuela" },
-      { "@type": "Place", name: "Los Álamos" },
-      { "@type": "Place", name: "El Bajondillo" },
-      { "@type": "Place", name: "El Pinillo" },
-      { "@type": "Place", name: "La Colina" },
-      { "@type": "Place", name: "Montemar" },
-      { "@type": "Place", name: "El Calvario" },
-      { "@type": "Place", name: "Cortijo de Maza" },
+      { "@type": "Place", name: "Torremolinos Centrum" },
+      { "@type": "Place", name: "Selwo" },
+      { "@type": "Place", name: "New Golden Mile" },
+      { "@type": "Place", name: "Cancelada" },
+      { "@type": "Place", name: "Atalaya" },
+      { "@type": "Place", name: "El Paraíso" },
+      { "@type": "Place", name: "Benamara" },
+      { "@type": "Place", name: "Costalita" },
+      { "@type": "City", name: "Casares" },
+      { "@type": "City", name: "Manilva" },
     ],
     email: siteConfig.contact.email,
+    telephone: siteConfig.contact.phoneE164,
     url: absoluteUrl(),
     logo: absoluteUrl("/verhuurbeheer-torremolinos-logo.svg"),
     image: absoluteUrl("/luxe-woning-torremolinos-zeezicht.webp"),
@@ -246,7 +247,7 @@ export default function Home() {
           <a href="/blog/">Blog</a>
           <a href="/contact/">Contact</a>
         </nav>
-          <a className="btn btn-small header-cta" href={leadHref}>
+        <a className="btn btn-small header-cta" href="/contact/">
           Woning aanmelden
         </a>
         <details className="mobile-menu">
@@ -270,7 +271,7 @@ export default function Home() {
             <a href="/over-ons/">Over ons</a>
             <a href="/blog/">Blog & kennisbank</a>
             <a href="/contact/">Contact</a>
-            <a href="/woning-aanmelden/">Woning aanmelden</a>
+            <a href="/contact/">Woning aanmelden</a>
           </div>
         </details>
       </header>
@@ -281,16 +282,15 @@ export default function Home() {
           <p className="kicker">
             Voor Nederlandse woningeigenaren aan de Costa del Sol
           </p>
-          <h1>Fullservice verhuurbeheer in Torremolinos</h1>
+          <h1>Verhuurbeheer Torremolinos voor uw woning.</h1>
           <p>
-            Wij verzorgen de verhuur van uw vakantiewoning van A tot Z: van
-            Airbnb en Booking.com tot gastenservice, schoonmaak, onderhoud en
-            controles ter plaatse. Eén Nederlandstalig aanspreekpunt voor u als
-            eigenaar.
+            Professioneel beheer voor vakantieverhuur, midterm en langetermijn,
+            aangevuld met lokaal vastgoedbeheer, schoonmaak en onderhoud. Eén
+            Nederlandstalig aanspreekpunt en een team ter plaatse.
           </p>
           <div className="actions">
             <a className="btn hero-cta" href="/contact/">
-              Ontvang vrijblijvend verhuuradvies
+              Meld uw woning aan
             </a>
             <a className="link-light" href="#diensten">
               Bekijk alle diensten →
@@ -308,7 +308,7 @@ export default function Home() {
           </span>
           <span>
             <CheckCircle2 aria-hidden="true" />
-            <b>Lokale uitvoering</b> in Torremolinos en directe omgeving
+            <b>5-sterren beheer</b> voor maximale verhuurinkomsten
           </span>
         </div>
       </section>
@@ -319,49 +319,29 @@ export default function Home() {
       >
         <figure className="showcase-wide">
           <img
-            src="/urbanisatie-zwembad-estepona.webp"
-            alt="Mediterrane urbanisatie met zwembad aan de Costa del Sol"
-            width="1800"
-            height="1013"
-            loading="eager"
-          />
-          <figcaption>Leven en verhuren aan de Costa del Sol</figcaption>
-        </figure>
-        <figure className="showcase-pool">
-          <img
-            src="/zonnig-terras-zeezicht-estepona.webp"
-            alt="Zonnig terras met uitzicht op zee aan de Costa del Sol"
+            src="/zonnig-terras-zeezicht-torremolinos.webp"
+            alt="Zonnig terras van een vakantiewoning in Torremolinos met uitzicht op zee"
             width="1200"
             height="800"
+            loading="eager"
+          />
+          <figcaption>Woningen met karakter en verhuurpotentieel</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/villa-zwembad-torremolinos.webp"
+            alt="Zwembad en mediterrane tuin bij een villa in Torremolinos"
+            width="1800"
+            height="1118"
             loading="lazy"
           />
-          <figcaption>Palmen, zon en buitenleven</figcaption>
         </figure>
-        <figure className="showcase-sunset">
+        <figure>
           <img
-            src="/woning-interieur-estepona.webp"
-            alt="Licht en verzorgd interieur van een vakantiewoning"
-            width="1500"
-            height="1000"
-            loading="lazy"
-          />
-          <figcaption>Avonden onder de Spaanse zon</figcaption>
-        </figure>
-        <figure className="showcase-garden">
-          <img
-            src="/urbanisatie-zwembad-estepona.webp"
-            alt="Witte urbanisatie met groene tuin en zwembad in Torremolinos"
+            src="/luxe-interieur-torremolinos.webp"
+            alt="Licht ingericht vakantieappartement aan de Costa del Sol"
             width="1600"
-            height="1067"
-            loading="lazy"
-          />
-        </figure>
-        <figure className="showcase-terrace">
-          <img
-            src="/zonnig-terras-zeezicht-estepona.webp"
-            alt="Zonnig terras met zeezicht in Torremolinos"
-            width="1600"
-            height="1067"
+            height="1200"
             loading="lazy"
           />
         </figure>
@@ -370,11 +350,10 @@ export default function Home() {
       <section className="services" id="diensten">
         <div className="section-head">
           <p className="kicker orange">Onze diensten</p>
-          <h2>Alle onderdelen van verhuurbeheer goed op elkaar afgestemd</h2>
+          <h2>Alles voor uw woning in Torremolinos</h2>
           <p>
-            Van de advertentie en gastenservice tot de wisselschoonmaak en
-            technische opvolging: u hoeft niet zelf tussen verschillende
-            partijen te schakelen.
+            Van verhuur tot lokale woningzorg. U kiest wat nodig is; wij regelen
+            de uitvoering vanuit één vast aanspreekpunt.
           </p>
         </div>
         <div className="service-grid">
@@ -410,18 +389,17 @@ export default function Home() {
       <section className="rental-band">
         <div>
           <p className="kicker">Welke verhuurvorm past?</p>
-          <h2>Niet iedere woning vraagt om dezelfde verhuurstrategie.</h2>
+          <h2>Verhuren op een manier die bij u past.</h2>
           <p>
-            De ligging, het type woning en uw eigen gebruik bepalen welke route
-            logisch is. We vergelijken vakantieverhuur, tijdelijke verhuur en
-            langetermijnverhuur voordat we een concreet plan uitwerken.
+            We vergelijken eigen gebruik, gewenste opbrengst en zekerheid en
+            adviseren welke verhuurvorm bij uw woning past.
           </p>
         </div>
         <div className="rental-options">
           <a href="/vakantieverhuur-torremolinos/">
             <small>Korte verblijven</small>
             <b>Vakantieverhuur</b>
-            <span>Plan op maat →</span>
+            <span>Vanaf 18% →</span>
           </a>
           <a href="/midterm-verhuur-torremolinos/">
             <small>Tijdelijk verblijf</small>
@@ -439,7 +417,7 @@ export default function Home() {
       <section className="process" id="werkwijze">
         <div className="section-head left">
           <p className="kicker orange">Onze werkwijze</p>
-          <h2>Van eerste woningcheck naar dagelijkse uitvoering</h2>
+          <h2>Van eerste gesprek tot dagelijks beheer</h2>
         </div>
         <ol>
           <li>
@@ -447,8 +425,8 @@ export default function Home() {
             <div>
               <h3>Kennismaking</h3>
               <p>
-                We bespreken uw woning, uw doelen, het gewenste eigen gebruik
-                en de verhuurvorm die u voor ogen heeft.
+                We bespreken uw woning, doelen, eigen gebruik en gewenste
+                verhuurvorm.
               </p>
             </div>
           </li>
@@ -457,8 +435,8 @@ export default function Home() {
             <div>
               <h3>Woningcheck en voorstel</h3>
               <p>
-                Op locatie bekijken we presentatie, inventaris, toegang en
-                praktische aandachtspunten. Daarna volgt een duidelijk voorstel.
+                We bekijken wat nodig is, bepalen de dienstverlening en maken de
+                kosten transparant.
               </p>
             </div>
           </li>
@@ -467,8 +445,8 @@ export default function Home() {
             <div>
               <h3>Voorbereiding</h3>
               <p>
-                De woningpresentatie, kanalen, prijsaanpak, gasteninformatie en
-                lokale werkafspraken worden zorgvuldig ingericht.
+                Presentatie, kanalen, informatie, toegang en lokale teams worden
+                ingericht.
               </p>
             </div>
           </li>
@@ -477,78 +455,43 @@ export default function Home() {
             <div>
               <h3>Start en opvolging</h3>
               <p>
-                Na de start coördineren wij het dagelijkse beheer en houden we u
-                op de hoogte van reserveringen en relevante woningzaken.
+                Wij verzorgen de dagelijkse uitvoering en houden u op de hoogte
+                van relevante zaken.
               </p>
             </div>
           </li>
         </ol>
       </section>
 
-      <section className="owner-experience" aria-label="De beleving van professioneel woningbeheer">
-        <div className="owner-experience-copy">
-          <p className="kicker orange">Uw woning, onze aandacht</p>
-          <h2>Meer rust. Meer grip. Een woning die er altijd goed bij staat.</h2>
-          <p>
-            Van de eerste indruk van uw advertentie tot de controle na vertrek:
-            we bewaken de uitstraling én de praktische details die het verschil
-            maken voor gasten en eigenaren.
-          </p>
-          <a className="dark-link" href="/woning-aanmelden/">
-            Bespreek uw woning met ons →
-          </a>
-        </div>
-        <figure className="owner-experience-main">
-          <img
-            src="/torremolinos-property.webp"
-            alt="Verzorgde woning in Torremolinos met uitzicht op zee"
-            width="1200"
-            height="800"
-            loading="lazy"
-          />
-        </figure>
-        <figure className="owner-experience-detail">
-          <img
-            src="/woning-interieur-estepona.webp"
-            alt="Licht en verzorgd interieur van een woning in Torremolinos"
-            width="1200"
-            height="800"
-            loading="lazy"
-          />
-          <figcaption>Presentatie, controle en lokale opvolging</figcaption>
-        </figure>
-      </section>
-
       <section className="regions compact-regions" id="regios">
         <div className="section-head">
           <p className="kicker orange">Lokaal werkgebied</p>
-          <h2>Lokale kennis van kust, centrum en woonwijken</h2>
+          <h2>Actief in Torremolinos, Casares en Manilva</h2>
           <p>
-            Een strandappartement in La Carihuela vraagt om een andere aanpak
-            dan een woning in Montemar of El Pinillo. We stemmen presentatie,
-            bereikbaarheid en lokale uitvoering af op de precieze ligging.
+            Van Torremolinos Centrum, Selwo en New Golden Mile tot Cancelada,
+            Atalaya, Casares Costa en Manilva.
           </p>
         </div>
         <div className="area-list" aria-label="Werkgebieden rond Torremolinos">
-          <b>Torremolinos Centro</b>
-          <b>Playamar</b>
-          <b>La Carihuela</b>
-          <b>Los Álamos</b>
-          <b>El Bajondillo</b>
-          <b>El Pinillo</b>
-          <b>El Calvario</b>
-          <b>Cortijo de Maza</b>
+          <b>Torremolinos Centrum</b>
+          <b>Selwo</b>
+          <b>New Golden Mile</b>
+          <b>Cancelada</b>
+          <b>Atalaya</b>
+          <b>El Paraíso</b>
+          <b>Casares</b>
+          <b>Manilva</b>
         </div>
       </section>
 
       <section className="home-team">
         <div className="home-team-copy">
           <p className="kicker orange">Ons team</p>
-          <h2>Een vast aanspreekpunt, ondersteund door mensen ter plaatse.</h2>
+          <h2>Nederlandstalig contact, lokale uitvoering.</h2>
           <p>
-            De afspraken over uw woning blijven bij één contactpersoon. Voor de
-            uitvoering werken we met collega’s en vakmensen aan de Costa del Sol,
-            zodat vragen en werkzaamheden niet tussen partijen blijven liggen.
+            U spreekt met echte mensen die uw woning en de Costa del Sol kennen.
+            Samen verzorgen we verhuur, administratie, vastgoedbeheer en
+            praktische opvolging ter plaatse.
           </p>
           <a className="dark-link" href="/over-ons/">
             Maak kennis met het volledige team →
@@ -557,7 +500,7 @@ export default function Home() {
         <div className="home-team-grid">
           {homepageTeam.map((person) => (
             <article key={person.name}>
-              <img src={person.image} alt={person.alt} width="640" height="640" loading="lazy" />
+              <img src={person.image} alt={person.alt} loading="lazy" />
               <div>
                 <h3>{person.name}</h3>
                 <p>{person.role}</p>
@@ -570,10 +513,10 @@ export default function Home() {
       <section className="knowledge compact-knowledge" id="kennisbank">
         <div className="section-head">
           <p className="kicker orange">Blogs &amp; advies</p>
-          <h2>Kennis voor eigenaren die betere keuzes willen maken</h2>
+          <h2>Praktische blogs voor woningeigenaren</h2>
           <p>
-            Lees praktische uitleg over tarieven, prijsstrategie, regelgeving,
-            verhuurvormen en woningbeheer in Torremolinos.
+            Heldere uitleg over kosten, verhuurstrategie, regelgeving en
+            vastgoedbeheer in Torremolinos.
           </p>
         </div>
         <div className="knowledge-grid">
@@ -601,7 +544,7 @@ export default function Home() {
       <section className="faq">
         <div>
           <p className="kicker orange">Veelgestelde vragen</p>
-          <h2>Belangrijke vragen vooraf beantwoord</h2>
+          <h2>Direct een duidelijk antwoord</h2>
           <p>
             De belangrijkste vragen over onze diensten en tarieven in Torremolinos.
           </p>
@@ -621,34 +564,28 @@ export default function Home() {
 
       <section className="contact" id="contact">
         <div>
-          <p className="kicker">Vrijblijvende verhuurprognose</p>
-          <h2>Bespreek de verhuurmogelijkheden van uw woning in Torremolinos</h2>
+          <p className="kicker">Gratis verhuurprognose</p>
+          <h2>Wat kan uw woning in Torremolinos opleveren?</h2>
           <p>
-            Deel de locatie, het woningtype en uw plannen voor eigen gebruik.
-            Dan kijken we persoonlijk welke verhuurvorm en aanpak realistisch
-            bij uw situatie passen.
+            Deel de belangrijkste gegevens. We nemen persoonlijk contact op om
+            de woning en passende verhuurvorm te bespreken.
           </p>
           <p>
             <a href={emailHref}>
               {siteConfig.contact.email}
             </a>
+            <br />
+            <a href={phoneHref}>{siteConfig.contact.phoneDisplay}</a>
           </p>
-          <ul>
-            <li>Vrijblijvend en zonder verplichtingen</li>
-            <li>Persoonlijk Nederlandstalig contact</li>
-            <li>Duidelijk advies passend bij uw woning</li>
-          </ul>
-          <a className="btn" href={leadHref}>Meld uw woning aan →</a>
         </div>
         <form
           action={leadFormAction}
           method="post"
         >
-          <input type="hidden" name="_subject" value="Nieuwe lead via Verhuurbeheer Torremolinos – homepage" />
+          <input type="hidden" name="_subject" value="Nieuwe lead via Verhuurbeheer Torremolinos" />
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
           <input type="hidden" name="bron_website" value="verhuurbeheertorremolinos.nl" />
-          <input type="hidden" name="bron_formulier" value="Homepage" />
+          <input type="hidden" name="bron_formulier" value="Homepage – gratis verhuurprognose" />
           <label>
             Naam
             <input name="naam" required />

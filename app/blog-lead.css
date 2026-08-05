@@ -13,4 +13,3 @@
 .blog-lead form small{color:var(--muted)}
 @media(max-width:1000px){.blog-lead{grid-template-columns:1fr}.blog-lead-person{min-height:440px}}
 @media(max-width:620px){.blog-lead{padding:70px 6vw}.blog-lead-person{grid-template-columns:1fr}.blog-lead-person img{height:330px}.blog-lead form{grid-template-columns:1fr;padding:24px}.blog-lead label{grid-column:1/-1}}
-
