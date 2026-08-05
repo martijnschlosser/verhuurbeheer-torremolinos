@@ -29,21 +29,6 @@ const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
-    const isPublicDomain =
-      url.hostname === "verhuurbeheertorremolinos.nl" ||
-      url.hostname === "www.verhuurbeheertorremolinos.nl";
-    const forwardedProto = request.headers.get("x-forwarded-proto");
-    const cfVisitor = request.headers.get("cf-visitor");
-    const originalRequestWasHttp =
-      url.protocol === "http:" ||
-      forwardedProto === "http" ||
-      cfVisitor?.includes('"scheme":"http"') === true;
-    if (isPublicDomain && (originalRequestWasHttp || url.hostname.startsWith("www."))) {
-      url.protocol = "https:";
-      url.hostname = "verhuurbeheertorremolinos.nl";
-      return Response.redirect(url.toString(), 301);
-    }
-
     if (url.pathname === "/_vinext/image") {
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
       return handleImageOptimization(request, {

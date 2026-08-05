@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Verhuurbeheer Torremolinos",
     short_name: "VBE Torremolinos",
-    description: "Fullservice verhuurbeheer en vastgoedbeheer in Torremolinos, Casares en Manilva.",
+    description: "Fullservice verhuurbeheer en vastgoedbeheer voor woningeigenaren in Torremolinos.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
