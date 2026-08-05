@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import "./thanks.css";
+export const metadata: Metadata = { title: "Bedankt voor uw aanvraag | Verhuurbeheer Torremolinos", robots: { index: false, follow: false } };
+export default function BedanktPage(){return <main className="sunset-thanks"><div className="sun-orbit" aria-hidden="true"><span>✓</span></div><a className="thanks-brand" href="/" aria-label="Terug naar Verhuurbeheer Torremolinos"><img src="/verhuurbeheer-torremolinos-logo.svg" alt="Logo Verhuurbeheer Torremolinos" /></a><section className="message-card"><p className="mini-title">¡Perfecto!</p><h1>Hola, bedankt voor<br/>uw aanvraag.</h1><p>Uw bericht is goed ontvangen. We nemen binnen <strong>één werkdag</strong> persoonlijk contact met u op.</p><div className="muchas">Muchas gracias <span>☀️</span></div><a href="/">Terug naar de website <b>→</b></a></section><small>Verhuurbeheer Torremolinos · Costa del Sol</small></main>}
