@@ -11,7 +11,6 @@ import "./cookies.css";
 import "./design-upgrade.css";
 import CookieConsent from "./CookieConsent";
 import Analytics from "./Analytics";
-import ContactFormLinks from "./ContactFormLinks";
 import { siteConfig } from "./site-config";
 
 export const metadata: Metadata = {
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Verhuurbeheer Torremolinos",
     description:
-      "Lokaal fullservice verhuurbeheer voor Nederlandse woningeigenaren in Torremolinos, Benalmádena en Málaga.",
+      "Fullservice verhuurbeheer in Torremolinos voor Nederlandse woningeigenaren. Airbnb, Booking.com, gastenservice, schoonmaak en onderhoud vanuit één lokaal team.",
     url: "/",
     siteName: "Verhuurbeheer Torremolinos",
     locale: "nl_NL",
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Verhuurbeheer Torremolinos",
     description:
-      "Fullservice verhuur- en vastgoedbeheer in Torremolinos, Benalmádena en Málaga.",
+      "Fullservice verhuur- en vastgoedbeheer voor woningeigenaren in Torremolinos.",
     images: ["/luxe-woning-torremolinos-zeezicht.webp"],
   },
   robots: {
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: { icon: "/favicon.svg", apple: "/favicon.svg" },
+  icons: { icon: "/favicon.svg", apple: "/verhuurbeheer-torremolinos-logo.svg" },
   manifest: "/manifest.webmanifest",
   category: "vastgoedbeheer",
   verification: siteConfig.analytics.searchConsoleVerification
@@ -84,7 +83,6 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        <ContactFormLinks />
         <Analytics />
         <CookieConsent />
       </body>

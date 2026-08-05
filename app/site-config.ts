@@ -1,4 +1,11 @@
 export const siteConfig = {
+  template: {
+    version: "1.0.0",
+    citySlug: "torremolinos",
+    leadPath: "/woning-aanmelden/",
+    thankYouPath: "/bedankt/",
+    sourceWebsite: "verhuurbeheertorremolinos.nl",
+  },
   brand: {
     name: "Verhuurbeheer Torremolinos",
     legalName: "Verhuurbeheer Spanje",
@@ -11,25 +18,29 @@ export const siteConfig = {
     areas: [
       "Torremolinos Centro",
       "La Carihuela",
-      "El Bajondillo",
-      "Montemar",
       "Playamar",
       "Los Álamos",
+      "Montemar",
+      "El Bajondillo",
       "El Pinillo",
-      "Torremolinos Pueblo",
-      "Benalmádena",
-      "Málaga",
+      "La Colina",
+      "El Calvario",
+      "Cortijo de Maza",
     ],
+  },
+  assets: {
+    logo: "/vbs-logo.webp",
+    hero: "/torremolinos-hero.webp",
+    social: "/luxe-woning-torremolinos-zeezicht.webp",
+    signup: "/zonnig-terras-zeezicht-torremolinos.webp",
   },
   domain: "https://verhuurbeheertorremolinos.nl",
   contact: {
-    email: "sophie@verhuurbeheerspanje.nl",
-    phoneDisplay: "+31 85 212 8105",
-    phoneE164: "+31852128105",
+    email: "contact@verhuurbeheerspanje.nl",
     whatsapp: "31852128105",
   },
   pricing: {
-    holidayRental: "Vanaf 18%",
+    holidayRental: "Voorstel op maat",
     midterm: "Eenmalig 1 maand huur",
     longterm: "Eenmalig 1 maand huur",
   },
@@ -38,9 +49,9 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/verhuurbeheerspanje/",
   },
   seo: {
-    title: "Verhuurbeheer Torremolinos | Voor Nederlandse eigenaren",
+    title: "Verhuurbeheer Torremolinos | Fullservice woningverhuur",
     description:
-      "Fullservice verhuurbeheer in Torremolinos voor Nederlandse eigenaren. Vakantieverhuur vanaf 18%, midterm, langetermijn en lokaal vastgoedbeheer.",
+      "Fullservice verhuurbeheer in Torremolinos voor Nederlandse eigenaren. Airbnb, Booking.com, gastenservice, schoonmaak, onderhoud en woningcontroles.",
     primaryKeywords: [
       "verhuurbeheer Torremolinos",
       "vakantieverhuurbeheer Torremolinos",
@@ -75,7 +86,9 @@ export const absoluteUrl = (path = "/") =>
   `${siteConfig.domain}${path.startsWith("/") ? path : `/${path}`}`;
 export const emailHref = `mailto:${siteConfig.contact.email}`;
 export const leadFormAction = `https://formsubmit.co/${siteConfig.contact.email}`;
-export const phoneHref = `tel:${siteConfig.contact.phoneE164}`;
+export const leadHref = siteConfig.template.leadPath;
+export const leadSubject = (context = "woningaanmelding") =>
+  `Nieuwe ${context} via ${siteConfig.brand.name}`;
 export const whatsappHref = (
   message = `Hallo, ik heb een vraag over verhuurbeheer in ${siteConfig.location.city}`,
 ) =>
