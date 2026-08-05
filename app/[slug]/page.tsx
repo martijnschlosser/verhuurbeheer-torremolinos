@@ -1,0 +1,941 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { contentBySlug, contentPages } from "../content";
+import { CookiePreferencesButton } from "../CookieConsent";
+import { CheckCircle2, Facebook, Instagram, Mail, Phone } from "lucide-react";
+import { absoluteUrl, emailHref, leadFormAction, phoneHref, siteConfig, whatsappHref } from "../site-config";
+
+const seoH1BySlug: Record<string, string> = {
+  "vakantieverhuur-torremolinos": "Vakantieverhuur in Torremolinos vanaf 18%",
+  "midterm-verhuur-torremolinos": "Midterm verhuur in Torremolinos",
+  "langetermijnverhuur-torremolinos": "Langetermijnverhuur in Torremolinos",
+  "vastgoedbeheer-torremolinos": "Vastgoedbeheer in Torremolinos",
+  "schoonmaak-onderhoud-torremolinos": "Schoonmaak en onderhoud in Torremolinos",
+  "renovatie-inrichting-torremolinos": "Renovatie en inrichting in Torremolinos",
+  "kosten-verhuurbeheer-torremolinos": "Wat kost verhuurbeheer in Torremolinos?",
+  "dynamische-prijzen-vakantiewoning":
+    "Dynamische prijzen voor een vakantiewoning in Torremolinos",
+  "zelf-verhuren-of-verhuurbeheer":
+    "Zelf verhuren of verhuurbeheer in Torremolinos?",
+  "verhuurlicentie-torremolinos":
+    "Verhuurlicentie in Torremolinos aanvragen en controleren",
+  "over-ons": "Over Verhuurbeheer Torremolinos",
+  werkwijze: "Werkwijze voor verhuurbeheer in Torremolinos",
+  contact: "Contact met Verhuurbeheer Torremolinos",
+  blog: "Blogs over verhuurbeheer in Torremolinos",
+};
+
+const team = [
+  {
+    name: "Martijn",
+    role: "Relatiemanager",
+    languages: "NL · EN · ES",
+    image: "/martijn-verhuurbeheer-torremolinos.webp",
+    alt: "Martijn, relatiemanager bij Verhuurbeheer Spanje aan de Costa del Sol",
+  },
+  {
+    name: "Geert",
+    role: "Manager Bouw",
+    languages: "NL · EN",
+    image: "/geert-vastgoedbeheer-torremolinos.webp",
+    alt: "Geert, manager bouw en vastgoedbeheer bij Verhuurbeheer Spanje",
+  },
+  {
+    name: "Sophie",
+    role: "Backoffice",
+    languages: "NL · EN · ES",
+    image: "/sophie-torremolinos.webp",
+    alt: "Sophie, Nederlandstalig aanspreekpunt en backoffice bij Verhuurbeheer Spanje",
+  },
+  {
+    name: "Päivi",
+    role: "Administratie",
+    languages: "NL · EN · FI",
+    image: "/paivi-administratie-verhuurbeheer.webp",
+    alt: "Päivi van de administratie van Verhuurbeheer Spanje",
+  },
+  {
+    name: "Joachim",
+    role: "Marketing",
+    languages: "EN · DA",
+    image: "/joachim-marketing-verhuurbeheer.webp",
+    alt: "Joachim van het marketingteam van Verhuurbeheer Spanje",
+  },
+  {
+    name: "Leon",
+    role: "Ambassadeur",
+    languages: "NL · EN",
+    image: "/leon-ambassadeur-verhuurbeheer.webp",
+    alt: "Leon, ambassadeur van Verhuurbeheer Spanje aan de Costa del Sol",
+  },
+  {
+    name: "Jacob",
+    role: "Tax & Legal",
+    languages: "ES · EN",
+    image: "/jacob-tax-legal-verhuurbeheer.webp",
+    alt: "Jacob van Tax & Legal bij Verhuurbeheer Spanje",
+  },
+];
+
+export function generateStaticParams() {
+  return contentPages.map(({ slug }) => ({ slug }));
+}
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const p = contentBySlug[slug];
+  if (!p) return {};
+  return {
+    title: { absolute: p.seoTitle },
+    description: p.description,
+    keywords: [...siteConfig.seo.primaryKeywords, ...siteConfig.seo.longTailKeywords],
+    alternates: { canonical: `/${p.slug}/` },
+    authors: [
+      {
+        name: siteConfig.brand.legalName,
+        url: siteConfig.brand.parentUrl,
+      },
+    ],
+    openGraph: {
+      title: p.seoTitle,
+      description: p.description,
+      type: p.type === "gids" ? "article" : "website",
+      url: `/${p.slug}/`,
+      siteName: siteConfig.brand.name,
+      locale: "nl_NL",
+      images: [
+        {
+          url: "/torremolinos-hero.webp",
+          width: 1586,
+          height: 992,
+          alt: `${p.title} aan de Costa del Sol`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: p.seoTitle,
+      description: p.description,
+      images: ["/torremolinos-hero.webp"],
+    },
+  };
+}
+
+const relatedBySlug: Record<string, string[]> = {
+  "vakantieverhuur-torremolinos": [
+    "verhuurlicentie-torremolinos",
+    "kosten-verhuurbeheer-torremolinos",
+    "dynamische-prijzen-vakantiewoning",
+  ],
+  "vastgoedbeheer-torremolinos": [
+    "schoonmaak-onderhoud-torremolinos",
+    "vakantieverhuur-torremolinos",
+    "zelf-verhuren-of-verhuurbeheer",
+  ],
+  "midterm-verhuur-torremolinos": [
+    "langetermijnverhuur-torremolinos",
+    "vastgoedbeheer-torremolinos",
+    "kosten-verhuurbeheer-torremolinos",
+  ],
+  "langetermijnverhuur-torremolinos": [
+    "midterm-verhuur-torremolinos",
+    "vastgoedbeheer-torremolinos",
+    "zelf-verhuren-of-verhuurbeheer",
+  ],
+  "verhuurlicentie-torremolinos": [
+    "vakantieverhuur-torremolinos",
+    "zelf-verhuren-of-verhuurbeheer",
+    "kosten-verhuurbeheer-torremolinos",
+  ],
+  "kosten-verhuurbeheer-torremolinos": [
+    "vakantieverhuur-torremolinos",
+    "midterm-verhuur-torremolinos",
+    "langetermijnverhuur-torremolinos",
+  ],
+  "dynamische-prijzen-vakantiewoning": [
+    "vakantieverhuur-torremolinos",
+    "kosten-verhuurbeheer-torremolinos",
+    "zelf-verhuren-of-verhuurbeheer",
+  ],
+};
+
+const contentVisualBySlug: Record<string, { src: string; alt: string }> = {
+  "vakantieverhuur-torremolinos": {
+    src: "/luxe-woning-torremolinos-zeezicht.webp",
+    alt: "Luxe vakantiewoning in Torremolinos met lichte woonkamer en uitzicht op zee",
+  },
+  "midterm-verhuur-torremolinos": {
+    src: "/luxe-interieur-torremolinos.webp",
+    alt: "Licht ingericht appartement voor seizoens- en midtermverhuur in Torremolinos",
+  },
+  "langetermijnverhuur-torremolinos": {
+    src: "/luxe-interieur-torremolinos.webp",
+    alt: "Verzorgd interieur van een woning voor langetermijnverhuur in Torremolinos",
+  },
+  "vastgoedbeheer-torremolinos": {
+    src: "/villa-zwembad-torremolinos.webp",
+    alt: "Zwembad en mediterrane tuin bij een professioneel beheerde villa in Torremolinos",
+  },
+  "schoonmaak-onderhoud-torremolinos": {
+    src: "/luxe-interieur-torremolinos.webp",
+    alt: "Schoon en verzorgd interieur van een beheerde woning in Torremolinos",
+  },
+  "renovatie-inrichting-torremolinos": {
+    src: "/terras-zonsondergang-torremolinos.webp",
+    alt: "Luxe terras van een ingerichte woning in Torremolinos bij zonsondergang",
+  },
+  werkwijze: {
+    src: "/zonnig-terras-zeezicht-torremolinos.webp",
+    alt: "Zonnig terras van een beheerde vakantiewoning in Torremolinos met zeezicht",
+  },
+};
+
+const blogVisualBySlug: Record<
+  string,
+  { src: string; alt: string; category: string; readTime: string }
+> = {
+  "kosten-verhuurbeheer-torremolinos": {
+    src: "/vastgoed-aan-zee-torremolinos.webp",
+    alt: "Woningen aan zee bij Torremolinos als illustratie bij de kosten van verhuurbeheer",
+    category: "Kosten & tarieven",
+    readTime: "4 min",
+  },
+  "dynamische-prijzen-vakantiewoning": {
+    src: "/luxe-woning-torremolinos-zeezicht.webp",
+    alt: "Luxe vakantiewoning met zeezicht in Torremolinos voor een blog over dynamische prijzen",
+    category: "Opbrengst",
+    readTime: "4 min",
+  },
+  "zelf-verhuren-of-verhuurbeheer": {
+    src: "/luxe-interieur-torremolinos.webp",
+    alt: "Verzorgd interieur van een vakantiewoning bij een blog over zelf verhuren of uitbesteden",
+    category: "Keuzehulp",
+    readTime: "5 min",
+  },
+  "verhuurlicentie-torremolinos": {
+    src: "/torremolinos-hero.webp",
+    alt: "Uitzicht over Torremolinos bij informatie over de verhuurlicentie",
+    category: "Regelgeving",
+    readTime: "6 min",
+  },
+};
+
+export default async function ContentRoute({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const page = contentBySlug[slug];
+  if (!page) notFound();
+  const displayTitle = seoH1BySlug[page.slug] ?? page.title;
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: page.faqs.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text },
+    })),
+  };
+  const pageUrl = absoluteUrl(`/${page.slug}/`);
+  const organization = {
+    "@type": "Organization",
+    "@id": `${siteConfig.domain}/#organization`,
+    name: siteConfig.brand.name,
+    url: absoluteUrl(),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/verhuurbeheer-torremolinos-logo.svg"),
+    },
+  };
+  const pageSchema =
+    page.type === "gids"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: page.title,
+          description: page.description,
+          url: pageUrl,
+          mainEntityOfPage: pageUrl,
+          image: absoluteUrl("/torremolinos-hero.webp"),
+          inLanguage: "nl-NL",
+          datePublished: "2026-08-02",
+          dateModified: "2026-08-02",
+          author: organization,
+          publisher: organization,
+        }
+      : {
+          "@context": "https://schema.org",
+          "@type": page.type === "dienst" ? "Service" : "WebPage",
+          name: page.title,
+          description: page.description,
+          url: pageUrl,
+          inLanguage: "nl-NL",
+          provider: organization,
+          areaServed: [
+            { "@type": "City", name: "Torremolinos" },
+            { "@type": "Place", name: "La Carihuela" },
+            { "@type": "Place", name: "El Bajondillo" },
+            { "@type": "Place", name: "Montemar" },
+            { "@type": "Place", name: "Playamar" },
+            { "@type": "Place", name: "Los Álamos" },
+            { "@type": "Place", name: "El Pinillo" },
+            { "@type": "Place", name: "Torremolinos Pueblo" },
+            { "@type": "City", name: "Benalmádena" },
+            { "@type": "City", name: "Málaga" },
+          ],
+        };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: absoluteUrl(),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name:
+          page.type === "gids"
+            ? "Kennisbank"
+            : page.type === "dienst"
+              ? "Diensten"
+              : "Bedrijf",
+        item:
+          page.type === "gids"
+            ? absoluteUrl("/blog/")
+            : absoluteUrl(),
+      },
+      { "@type": "ListItem", position: 3, name: page.title, item: pageUrl },
+    ],
+  };
+  const teamSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Team Verhuurbeheer Spanje",
+    itemListElement: team.map((person, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Person",
+        name: person.name,
+        jobTitle: person.role,
+        worksFor: {
+          "@type": "Organization",
+          name: siteConfig.brand.legalName,
+          url: siteConfig.brand.parentUrl,
+        },
+        image: absoluteUrl(person.image),
+      },
+    })),
+  };
+  const relatedSlugs =
+    relatedBySlug[page.slug] ??
+    contentPages
+      .filter((p) => p.slug !== page.slug && p.type !== "pagina")
+      .slice(0, 3)
+      .map((p) => p.slug);
+  const related = relatedSlugs
+    .map((relatedSlug) => contentBySlug[relatedSlug])
+    .filter(Boolean);
+  const contentVisual = contentVisualBySlug[page.slug];
+  const blogArticles = contentPages.filter(
+    (article) => article.type === "gids" && blogVisualBySlug[article.slug],
+  );
+  const featuredBlog = blogArticles[0];
+  const trustItems =
+    page.slug === "langetermijnverhuur-torremolinos"
+      ? [
+          <>
+            <b>Professionele huurcontracten</b> met duidelijke afspraken
+          </>,
+          <>
+            <b>Borg en eerste maand huur</b> zorgvuldig afgehandeld
+          </>,
+          <>
+            <b>Inventariscontrole</b> bij aanvang en einde huur
+          </>,
+          <>
+            <b>Persoonlijke check-in en check-out</b> bij de woning
+          </>,
+        ]
+      : page.slug === "vastgoedbeheer-torremolinos"
+        ? [
+            <>
+              <b>Maandelijkse woninginspecties</b> met foto’s en terugkoppeling
+            </>,
+            <>
+              <b>Veilig sleutelbeheer</b> en toegang voor leveranciers
+            </>,
+            <>
+              <b>Onderhoudscoördinatie</b> na uw akkoord
+            </>,
+          ]
+        : [
+            <>
+              <b>Airbnb &amp; Booking</b> op uw eigen naam
+            </>,
+            <>
+              <b>Vast Nederlandstalig</b> contactpersoon
+            </>,
+            <>
+              <b>5-sterren beheer</b> voor maximale verhuurinkomsten
+            </>,
+          ];
+  return (
+    <main className="content-page" id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {page.slug === "over-ons" && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(teamSchema) }}
+        />
+      )}
+      <header className="content-header">
+        <a
+          className="brand"
+          href="/"
+          aria-label="Verhuurbeheer Torremolinos – naar Home"
+        >
+          <span className="brand-mark">●</span>
+        </a>
+        <nav>
+          <a href="/">Home</a>
+          <details className="services-menu">
+            <summary>Diensten</summary>
+            <div>
+              <a href="/vakantieverhuur-torremolinos/">Vakantieverhuur</a>
+              <a href="/midterm-verhuur-torremolinos/">
+                Seizoens- en midtermverhuur
+              </a>
+              <a href="/langetermijnverhuur-torremolinos/">Langetermijnverhuur</a>
+              <a href="/vastgoedbeheer-torremolinos/">Vastgoedbeheer</a>
+              <a href="/schoonmaak-onderhoud-torremolinos/">
+                Schoonmaak & onderhoud
+              </a>
+              <a href="/renovatie-inrichting-torremolinos/">
+                Renovatie & inrichting
+              </a>
+              <a href="/verhuurlicentie-torremolinos/">Verhuurlicentie</a>
+            </div>
+          </details>
+          <a href="/werkwijze/">Werkwijze</a>
+          <a href="/over-ons/">Over ons</a>
+          <a href="/blog/">Blog</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+        <a className="button button-outline header-cta" href="/contact/">
+          Woning aanmelden
+        </a>
+        <details className="mobile-menu">
+          <summary aria-label="Menu openen">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <div>
+            <a href="/">Home</a>
+            <b>Diensten</b>
+            <a href="/vakantieverhuur-torremolinos/">Vakantieverhuur</a>
+            <a href="/midterm-verhuur-torremolinos/">Seizoens- en midtermverhuur</a>
+            <a href="/langetermijnverhuur-torremolinos/">Langetermijnverhuur</a>
+            <a href="/vastgoedbeheer-torremolinos/">Vastgoedbeheer</a>
+            <a href="/schoonmaak-onderhoud-torremolinos/">Schoonmaak & onderhoud</a>
+            <a href="/renovatie-inrichting-torremolinos/">Renovatie & inrichting</a>
+            <a href="/verhuurlicentie-torremolinos/">Verhuurlicentie</a>
+            <b>Bedrijf</b>
+            <a href="/werkwijze/">Werkwijze</a>
+            <a href="/over-ons/">Over ons</a>
+            <a href="/blog/">Blog & kennisbank</a>
+            <a href="/contact/">Contact</a>
+            <a href="/contact/">Woning aanmelden</a>
+          </div>
+        </details>
+      </header>
+      <div className="breadcrumb">
+        <a href="/">Home</a>
+        <span>›</span>
+        <span>
+          {page.type === "gids"
+            ? "Kennisbank"
+            : page.type === "dienst"
+              ? "Diensten"
+              : "Bedrijf"}
+        </span>
+        <span>›</span>
+        <b>{page.title}</b>
+      </div>
+      <section className="content-hero">
+        <div>
+          <p className="eyebrow">{page.eyebrow}</p>
+          <h1>{displayTitle}</h1>
+          <p>{page.intro}</p>
+          {!["contact", "woning-aanmelden", "bedankt"].includes(page.slug) && (
+            <a className="button button-primary" href="/contact/">
+              Bespreek uw woning →
+            </a>
+          )}
+        </div>
+        <aside>
+          <small>{page.price ? "Vanaf-prijs" : "Lokale expertise"}</small>
+          <strong>{page.price ?? "Torremolinos · Costa del Sol"}</strong>
+          <p>
+            Nederlandstalig contact en een lokale uitvoering rond uw woning.
+          </p>
+        </aside>
+      </section>
+      <section
+        className={`content-trustbar ${trustItems.length === 4 ? "content-trustbar-four" : ""}`}
+        aria-label={`Voordelen van ${page.title}`}
+      >
+        {trustItems.map((item, index) => (
+          <span key={index}>
+            <CheckCircle2 aria-hidden="true" />
+            {item}
+          </span>
+        ))}
+      </section>
+      {(page.slug === "contact" || page.slug === "woning-aanmelden") && (
+        <section className="contact contact-page-form" id="contactformulier">
+          <div className="contact-intro">
+            <p className="kicker">Persoonlijk kennismaken</p>
+            <h2>Vertel ons over uw woning</h2>
+            <p>
+              Deel kort uw plannen. Ons Nederlandstalige team neemt persoonlijk
+              contact met u op.
+            </p>
+            <div className="contact-options">
+              <a href={emailHref}>
+                <span>
+                  <Mail aria-hidden="true" />
+                </span>
+                <small>E-mail</small>
+                <strong>{siteConfig.contact.email}</strong>
+              </a>
+              <a href={phoneHref}>
+                <span>
+                  <Phone aria-hidden="true" />
+                </span>
+                <small>Telefoon</small>
+                <strong>{siteConfig.contact.phoneDisplay}</strong>
+              </a>
+            </div>
+          </div>
+          <form
+            action={leadFormAction}
+            method="post"
+          >
+            <input type="hidden" name="_subject" value="Nieuwe lead via Verhuurbeheer Torremolinos – contactpagina" />
+            <input type="hidden" name="_captcha" value="false" />\n            <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
+            <input type="hidden" name="bron_website" value="verhuurbeheertorremolinos.nl" />
+            <input type="hidden" name="bron_formulier" value="Contactpagina" />
+            <label>
+              Naam
+              <input name="naam" autoComplete="name" required />
+            </label>
+            <label>
+              E-mailadres
+              <input type="email" name="email" autoComplete="email" required />
+            </label>
+            <label>
+              Telefoonnummer
+              <input type="tel" name="telefoon" autoComplete="tel" />
+            </label>
+            <label>
+              Locatie woning
+              <input
+                name="locatie"
+                placeholder="Bijv. Torremolinos of La Carihuela"
+                required
+              />
+            </label>
+            <label>
+              Type woning
+              <select name="type">
+                <option>Appartement</option>
+                <option>Villa</option>
+                <option>Townhouse</option>
+                <option>Anders</option>
+              </select>
+            </label>
+            <label>
+              Gewenste dienst
+              <select name="dienst">
+                <option>Vakantieverhuur</option>
+                <option>Seizoens- en midtermverhuur</option>
+                <option>Langetermijnverhuur</option>
+                <option>Vastgoedbeheer</option>
+                <option>Schoonmaak &amp; onderhoud</option>
+                <option>Renovatie &amp; inrichting</option>
+              </select>
+            </label>
+            <label className="wide">
+              Is er al een verhuurlicentie?
+              <select name="verhuurlicentie" defaultValue="">
+                <option value="" disabled>
+                  Kies een antwoord
+                </option>
+                <option>Ja</option>
+                <option>Nee</option>
+                <option>In aanvraag</option>
+                <option>Niet van toepassing / weet ik niet</option>
+              </select>
+            </label>
+            <label className="wide">
+              Uw vraag of toelichting
+              <textarea name="bericht" rows={5} />
+            </label>
+            <button className="btn wide form-cta" type="submit">
+              Verstuur uw aanvraag →
+            </button>
+            <small className="wide privacy-note">
+              Wij verwerken uw gegevens volgens onze{" "}
+              <a href="/privacyverklaring/">privacyverklaring</a>.
+            </small>
+          </form>
+        </section>
+      )}
+      {page.slug === "blog" && featuredBlog ? (
+        <section
+          className="blog-index"
+          aria-label="Alle blogs over verhuurbeheer in Torremolinos"
+        >
+          <div className="blog-index-heading">
+            <p className="eyebrow">Nieuw &amp; belangrijk</p>
+            <h2>Uitgelicht voor woningeigenaren</h2>
+          </div>
+          <a className="featured-article" href={`/${featuredBlog.slug}/`}>
+            <img
+              src={blogVisualBySlug[featuredBlog.slug].src}
+              alt={blogVisualBySlug[featuredBlog.slug].alt}
+            />
+            <div>
+              <span>
+                {blogVisualBySlug[featuredBlog.slug].category} ·{" "}
+                {blogVisualBySlug[featuredBlog.slug].readTime} lezen
+              </span>
+              <h3>{featuredBlog.title}</h3>
+              <p>{featuredBlog.description}</p>
+              <b>Lees het artikel →</b>
+            </div>
+          </a>
+          <div className="blog-list-heading">
+            <p className="eyebrow">Alle artikelen</p>
+            <h2>Praktische kennis over uw woning in Spanje</h2>
+          </div>
+          <div className="blog-card-grid">
+            {blogArticles.slice(1).map((article) => {
+              const visual = blogVisualBySlug[article.slug];
+              return (
+                <a
+                  className="blog-card"
+                  href={`/${article.slug}/`}
+                  key={article.slug}
+                >
+                  <img src={visual.src} alt={visual.alt} loading="lazy" />
+                  <div>
+                    <span>
+                      {visual.category} · {visual.readTime} lezen
+                    </span>
+                    <h3>{article.title}</h3>
+                    <p>{article.description}</p>
+                    <b>Lees verder →</b>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      ) : (
+        <>
+          {contentVisual && (
+            <figure className="content-visual">
+              <img
+                src={contentVisual.src}
+                alt={contentVisual.alt}
+                loading="lazy"
+              />
+              <figcaption>
+                Lokale aandacht voor presentatie, beheer en uitvoering rond uw
+                woning.
+              </figcaption>
+            </figure>
+          )}
+          <article className="article-body">
+            {page.sections.map((s, i) => (
+              <section key={s.title}>
+                <span>0{i + 1}</span>
+                <div>
+                  <h2>{s.title}</h2>
+                  {s.paragraphs.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                  {s.bullets && (
+                    <ul>
+                      {s.bullets.map((b) => (
+                        <li key={b}>{b}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </section>
+            ))}
+          </article>
+        </>
+      )}
+      {page.slug === "verhuurlicentie-torremolinos" && (
+        <aside className="official-sources" aria-label="Officiële bronnen">
+          <strong>Officiële informatie controleren</strong>
+          <p>
+            Regels kunnen wijzigen. Controleer uw situatie altijd aan de hand
+            van de actuele informatie van de bevoegde instanties.
+          </p>
+          <a
+            href="https://www.juntadeandalucia.es/organismos/turismoyandaluciaexterior/areas/registro-turismo/establecimientos-servicios/paginas/viviendas-turisticas.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Junta de Andalucía: viviendas de uso turístico →
+          </a>
+          <a
+            href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-26931"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            BOE: Registro Único de Arrendamientos →
+          </a>
+        </aside>
+      )}
+      {page.slug === "over-ons" && (
+        <section className="team-section">
+          <div className="team-heading">
+            <p className="eyebrow">Het team</p>
+            <h2>Echte mensen. Ter plaatse.</h2>
+            <p>
+              Een Nederlandstalig team met verschillende specialismen, van
+              verhuur en administratie tot vastgoedbeheer, marketing en Tax
+              &amp; Legal.
+            </p>
+          </div>
+          <div className="team-grid">
+            {team.map((person) => (
+              <article className="team-card" key={person.name}>
+                <div className="team-photo">
+                  <img src={person.image} alt={person.alt} loading="lazy" />
+                </div>
+                <div>
+                  <h3>{person.name}</h3>
+                  <p>{person.role}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+      <section className="page-faq">
+        <div>
+          <p className="eyebrow">Veelgestelde vragen</p>
+          <h2>Vragen over {page.title.toLowerCase()}</h2>
+        </div>
+        <div>
+          {page.faqs.map(([q, a], i) => (
+            <details key={q} open={i === 0}>
+              <summary>
+                {q}
+                <span>+</span>
+              </summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+      {page.slug !== "blog" && page.slug !== "contact" && (
+        <section className="related">
+          <p className="eyebrow">Lees ook</p>
+          <h2>Meer voor eigenaren in Torremolinos</h2>
+          <div>
+            {related.map((r) => (
+              <a href={`/${r.slug}/`} key={r.slug}>
+                <small>{r.type}</small>
+                <strong>{r.title}</strong>
+                <span>Lees verder →</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+      {page.type === "gids" && (
+        <section className="blog-lead">
+          <div className="blog-lead-person">
+            <Image
+              src="/sophie-torremolinos.webp"
+              alt="Sophie van Verhuurbeheer Torremolinos"
+              width={1088}
+              height={1100}
+              sizes="(max-width: 620px) 88vw, (max-width: 1000px) 40vw, 20vw"
+            />
+            <div>
+              <p className="eyebrow">Persoonlijk advies</p>
+              <h2>Meer weten over dit onderwerp?</h2>
+              <p>
+                Heeft u een vraag over dit artikel of wilt u weten wat dit voor
+                uw woning betekent? Sophie denkt graag met u mee.
+              </p>
+              <strong>Sophie · Backoffice</strong>
+              <a href={whatsappHref("Hallo Sophie, ik heb een vraag over dit artikel")}>
+                Stel uw vraag via WhatsApp →
+              </a>
+            </div>
+          </div>
+          <form
+            action={leadFormAction}
+            method="post"
+          >
+            <input type="hidden" name="_subject" value={`Nieuwe lead via Verhuurbeheer Torremolinos – ${page.title}`} />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="bron_website" value="verhuurbeheertorremolinos.nl" />
+            <input type="hidden" name="bron_formulier" value={`Kennisbank – ${page.title}`} />
+            <input
+              type="hidden"
+              name="onderwerp"
+              value={`Vraag over: ${page.title}`}
+            />
+            <label>
+              Naam
+              <input name="naam" autoComplete="name" required />
+            </label>
+            <label>
+              E-mailadres
+              <input type="email" name="email" autoComplete="email" required />
+            </label>
+            <label>
+              Telefoonnummer
+              <input type="tel" name="telefoon" autoComplete="tel" />
+            </label>
+            <label>
+              Locatie van uw woning
+              <input
+                name="locatie"
+                placeholder="Bijv. Torremolinos, Benalmádena of Málaga"
+              />
+            </label>
+            <label className="wide">
+              Uw vraag
+              <textarea name="vraag" rows={5} required />
+            </label>
+            <button className="button button-primary wide" type="submit">
+              Verstuur uw vraag →
+            </button>
+            <small className="wide">
+              Sophie neemt persoonlijk contact met u op.
+            </small>
+          </form>
+        </section>
+      )}
+      {page.slug !== "contact" && (
+        <section className="content-cta">
+          <p className="eyebrow">Vrijblijvend kennismaken</p>
+          <h2>Wilt u weten welke aanpak bij uw woning past?</h2>
+          <p>
+            Vertel ons kort waar uw woning ligt en hoe u deze wilt gebruiken.
+            Dan bespreken we de mogelijkheden voor beheer en verhuur in
+            Torremolinos.
+          </p>
+          <a className="button button-primary" href="/contact/">
+            Vraag een verhuurindicatie aan →
+          </a>
+        </section>
+      )}
+      <footer className="site-footer">
+        <div className="footer-brand">
+          <a className="brand" href="/" aria-label="Naar Home">
+            <span className="brand-mark">●</span>
+            <span>
+              Verhuurbeheer <b>Torremolinos</b>
+            </span>
+          </a>
+          <p>
+            Verhuurbeheer Torremolinos is onderdeel van{" "}
+            <a href="https://www.verhuurbeheerspanje.nl/">
+              Verhuurbeheer Spanje
+            </a>
+            .
+          </p>
+          <div className="social-links">
+            <a
+              href={siteConfig.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Verhuurbeheer Spanje op Instagram"
+            >
+              <Instagram aria-hidden="true" /> Instagram
+            </a>
+            <a
+              href={siteConfig.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Verhuurbeheer Spanje op Facebook"
+            >
+              <Facebook aria-hidden="true" /> Facebook
+            </a>
+          </div>
+        </div>
+        <div>
+          <b>Diensten</b>
+          <a href="/vakantieverhuur-torremolinos/">Vakantieverhuur</a>
+          <a href="/midterm-verhuur-torremolinos/">Seizoens- en midtermverhuur</a>
+          <a href="/langetermijnverhuur-torremolinos/">Langetermijnverhuur</a>
+          <a href="/vastgoedbeheer-torremolinos/">Vastgoedbeheer</a>
+          <a href="/verhuurlicentie-torremolinos/">Verhuurlicentie</a>
+        </div>
+        <div>
+          <b>Meer</b>
+          <a href="/werkwijze/">Werkwijze</a>
+          <a href="/over-ons/">Over ons</a>
+          <a href="/blog/">Blog</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacyverklaring/">Privacyverklaring</a>
+          <a href="/cookieverklaring/">Cookieverklaring</a>
+          <CookiePreferencesButton />
+        </div>
+        <div>
+          <b>Contact</b>
+          <a href={whatsappHref()}>
+            WhatsApp
+          </a>
+          <a href={emailHref}>E-mail</a>
+          <small>© 2026 · Torremolinos · Costa del Sol</small>
+        </div>
+      </footer>
+      <a
+        className="whatsapp-float"
+        href={whatsappHref()}
+        aria-label="Contact via WhatsApp"
+      >
+        WhatsApp
+      </a>
+      <a className="to-top" href="#top" aria-label="Terug naar boven">
+        ↑
+      </a>
+    </main>
+  );
+}
