@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
 import { contentPages } from "./content";
 import { siteConfig } from "./site-config";
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -15,4 +17,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 }
-

@@ -580,14 +580,14 @@ export default async function ContentRoute({
           <div className="signup-story">
             <p className="kicker orange">Uw woning in goede handen</p>
             <h2>Een kleine eerste stap. Daarna regelen wij de rest.</h2>
-            <p>Vertel ons kort over uw woning. Binnen één werkdag neemt ons Nederlandstalige team persoonlijk contact met u op.</p>
+            <p>Vertel ons kort over uw woning. Binnen 2 werkdagen neemt ons Nederlandstalige team persoonlijk contact met u op.</p>
             <div className="signup-photo">
               <img src={siteConfig.assets.signup} alt={`Zonnig terras met zeezicht in ${siteConfig.location.city}`} width="1600" height="1067" loading="eager" />
               <span>Torremolinos · Costa del Sol</span>
             </div>
             <div className="signup-promises">
               <span><CheckCircle2 aria-hidden="true" /><b>Vrijblijvend</b><small>U zit nergens aan vast</small></span>
-              <span><CheckCircle2 aria-hidden="true" /><b>Binnen 1 werkdag</b><small>Persoonlijk antwoord</small></span>
+              <span><CheckCircle2 aria-hidden="true" /><b>Binnen 2 werkdagen</b><small>Persoonlijk antwoord</small></span>
               <span><CheckCircle2 aria-hidden="true" /><b>Nederlandstalig</b><small>Een helder gesprek</small></span>
             </div>
           </div>
