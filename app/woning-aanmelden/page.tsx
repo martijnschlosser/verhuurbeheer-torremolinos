@@ -13,7 +13,7 @@ export default function WoningAanmeldenPage() {
     <main className="woning-aanmelden-page" id="top">
       <header className="aanmeld-header">
         <a href="/" aria-label="Verhuurbeheer Torremolinos – naar Home">
-          <img src="/verhuurbeheer-torremolinos-logo.svg" alt="Logo Verhuurbeheer Torremolinos" width="50" height="50" />
+          <img src="/verhuurbeheer-torremolinos-logo.png" alt="Logo Verhuurbeheer Torremolinos" width="50" height="50" />
         </a>
         <a href="/contact/">Contact</a>
       </header>
