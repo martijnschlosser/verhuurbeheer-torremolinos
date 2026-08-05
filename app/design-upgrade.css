@@ -1,8 +1,8 @@
 .site-header,.content-header{height:92px;background:rgba(255,255,255,.97);border-bottom:0;box-shadow:0 8px 30px rgba(7,29,58,.09);backdrop-filter:blur(12px)}
 .site-header nav,.content-header nav{font-weight:500;gap:30px}.site-header nav>a,.content-header nav>a,.services-menu summary{font-weight:600;position:relative;transition:color .2s ease}.site-header nav>a:after,.content-header nav>a:after{content:"";position:absolute;left:0;right:100%;bottom:-10px;height:2px;background:var(--orange);transition:right .22s ease}.site-header nav>a:hover:after,.content-header nav>a:hover:after{right:0}
 .logo-lockup{font-size:15px;font-weight:650}.logo-lockup img{display:block;width:58px;height:58px;border-radius:50%;box-shadow:0 5px 18px rgba(7,29,58,.14)}
-.content-header .brand{display:flex;align-items:center;gap:12px}.content-header .brand-mark{font-size:0;width:56px;height:56px;display:block;border-radius:50%;background:transparent url('/verhuurbeheer-torremolinos-logo.png') center/contain no-repeat;box-shadow:0 5px 18px rgba(7,29,58,.14)}.content-header .brand b{color:var(--orange)}
-.footer-brand .brand-mark{font-size:0;width:52px;height:52px;display:inline-block;vertical-align:middle;margin-right:12px;border-radius:50%;background:transparent url('/verhuurbeheer-torremolinos-logo.png') center/contain no-repeat}.footer-brand .logo-lockup img{display:none}.footer-brand .logo-lockup:before{content:"";width:52px;height:52px;flex:0 0 52px;border-radius:50%;background:transparent url('/verhuurbeheer-torremolinos-logo.png') center/contain no-repeat}
+.content-header .brand{display:flex;align-items:center;gap:12px}.content-header .brand-mark{font-size:0;width:56px;height:56px;display:block;background:url('/verhuurbeheer-torremolinos-logo.svg') center/contain no-repeat;box-shadow:none}.content-header .brand b{color:var(--orange)}
+.footer-brand .brand-mark{font-size:0;width:52px;height:52px;display:inline-block;vertical-align:middle;margin-right:12px;background:url('/verhuurbeheer-torremolinos-logo.svg') center/contain no-repeat}.footer-brand .logo-lockup img{display:block}.footer-brand .logo-lockup:before{content:none}
 .btn,.button{border-radius:10px;box-shadow:0 10px 25px rgba(255,100,24,.18);transition:transform .22s ease,box-shadow .22s ease,background .22s ease}.btn:hover,.button:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(255,100,24,.28)}
 .hero{min-height:740px}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(7,29,58,.28));pointer-events:none}.hero-inner{padding:46px 0}.hero .kicker{display:inline-flex;align-items:center;gap:10px}.hero .kicker:before{content:"";width:32px;height:2px;background:var(--orange)}.hero h1{text-shadow:0 8px 35px rgba(0,0,0,.22)}.hero-stats{z-index:2;box-shadow:0 -12px 35px rgba(3,19,39,.18)}
 .services{background:linear-gradient(180deg,#f7f4ef 0%,#f1ede5 100%)}.service-card{border:1px solid rgba(7,29,58,.07);border-radius:16px;box-shadow:0 10px 30px rgba(7,29,58,.07);overflow:hidden}.service-card:hover{transform:translateY(-9px);box-shadow:0 22px 48px rgba(7,29,58,.14);border-color:rgba(255,100,24,.28)}.service-card-top{display:flex;align-items:center;justify-content:space-between}.service-icon{width:54px;height:54px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(255,100,24,.1);color:var(--orange);transition:.25s}.service-icon svg{width:27px;height:27px;stroke-width:1.8}.service-card:hover .service-icon{background:var(--orange);color:#fff;transform:rotate(-4deg) scale(1.06)}.service-card h3{margin-top:28px}.service-card em{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px}.service-card em:after{content:"→";font-size:20px}
@@ -153,8 +153,8 @@ footer,.site-footer{background:#233d4e}
 }
 
 /* Definitieve fotografie-override na alle responsive regels. */
-.hero:before{background-image:url('/luxe-woning-torremolinos-zeezicht.webp')!important;background-position:center center!important}
-@media(max-width:760px){.hero:before{background-image:url('/luxe-woning-torremolinos-zeezicht.webp')!important;background-position:center 55%!important}}
+.hero:before{background-image:url('/torremolinos-hero.webp')!important;background-position:center center!important}
+@media(max-width:760px){.hero:before{background-image:url('/torremolinos-hero.webp')!important;background-position:center 55%!important}}
 
 /* Inhoudspagina's: het woningbeeld moet echt zichtbaar zijn, niet als watermerk. */
 .content-hero:after{
@@ -189,8 +189,8 @@ footer,.site-footer{background:#233d4e}
 }
 
 /* Nieuwe eigen woningfotografie: luxe, lokaal en snel geladen. */
-.hero:before{background-image:url('/luxe-woning-torremolinos-zeezicht.webp')!important;background-position:center center!important}
-@media(max-width:760px){.hero:before{background-image:url('/luxe-woning-torremolinos-zeezicht.webp')!important;background-position:center 55%!important}}
+.hero:before{background-image:url('/torremolinos-hero.webp')!important;background-position:center center!important}
+@media(max-width:760px){.hero:before{background-image:url('/torremolinos-hero.webp')!important;background-position:center 55%!important}}
 
 /* Echt blogoverzicht */
 .blog-index{padding:96px 7vw 110px;background:var(--white)}
@@ -244,6 +244,37 @@ form input,form select,form textarea{min-height:50px;font-size:16px}
   .related>div,.team-grid{grid-template-columns:1fr!important}.related a{min-height:0!important}
   .blog-lead{grid-template-columns:1fr!important}.blog-lead form,.contact form{grid-template-columns:1fr!important}.blog-lead form>* ,.contact form>*{grid-column:1!important}
   .page-faq h2,.related h2,.content-cta h2{font-size:clamp(30px,8.5vw,39px)!important;line-height:1.1!important}
+}
+
+/* Herstelde interactieve laag: dezelfde rijke beweging en diepte als de basiswebsite. */
+.service-card,
+.knowledge-grid a,
+.home-team-grid article,
+.rental-options a,
+.area-list b,
+.property-showcase figure{
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease,background-color .28s ease;
+}
+.service-card{box-shadow:0 10px 28px rgba(7,29,58,.08)}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 22px 48px rgba(7,29,58,.16);border-color:rgba(223,117,73,.32)}
+.service-card:hover .service-icon{transform:translateY(-2px) scale(1.06);background:var(--orange);color:#fff}
+.rental-options a:hover{transform:translateX(7px);box-shadow:0 13px 32px rgba(7,29,58,.13);border-color:var(--orange)}
+.knowledge-grid a{box-shadow:0 8px 24px rgba(7,29,58,.07)}
+.knowledge-grid a:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(7,29,58,.14)}
+.knowledge-grid a:hover span{transform:translateX(4px)}
+.knowledge-grid a span{transition:transform .22s ease}
+.home-team-grid article{box-shadow:0 8px 24px rgba(7,29,58,.08)!important}
+.home-team-grid article:hover{transform:translateY(-7px);box-shadow:0 19px 40px rgba(7,29,58,.16)!important}
+.home-team-grid article img{transition:transform .42s ease}
+.home-team-grid article:hover img{transform:scale(1.035)}
+.area-list b:hover{transform:translateY(-3px);background:#fff;box-shadow:0 8px 20px rgba(7,29,58,.09)}
+.property-showcase figure{box-shadow:0 12px 30px rgba(7,29,58,.10)}
+.property-showcase figure:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(7,29,58,.16)}
+.property-showcase figure:hover img{transform:scale(1.055)}
+.property-image{background-image:url('/vastgoed-aan-zee-torremolinos.webp')}
+
+@media (prefers-reduced-motion:reduce){
+  .service-card,.knowledge-grid a,.home-team-grid article,.rental-options a,.area-list b,.property-showcase figure,.property-showcase img,.home-team-grid img{transition:none!important;transform:none!important}
 }
 
 @media(max-width:390px){
@@ -304,7 +335,7 @@ h1,h2,h3,.content-hero h1,.content-hero aside strong,.team-heading h2{
 .site-header>.header-cta,.content-header>.header-cta{min-height:42px;padding-inline:20px;border-radius:3px;box-shadow:none;font-size:12px;letter-spacing:.025em}
 
 .hero{display:grid!important;grid-template-columns:46% 54%;align-items:stretch;min-height:620px!important;background:var(--cream)!important;overflow:hidden}
-.hero:before{content:""!important;position:relative!important;inset:auto!important;grid-column:2;grid-row:1;width:100%!important;height:100%!important;min-height:542px;border-radius:0!important;background:url('/torremolinos-hero.webp') 62% center/cover no-repeat!important;opacity:1!important;z-index:0!important}
+.hero:before{content:""!important;position:relative!important;inset:auto!important;grid-column:2;grid-row:1;width:100%!important;height:100%!important;min-height:542px;border-radius:0!important;background:url('/terras-zonsondergang-torremolinos.webp') center/cover no-repeat!important;opacity:1!important;z-index:0!important}
 .hero:after{display:none!important}.hero-overlay{display:none}
 .hero-inner{grid-column:1;grid-row:1;width:auto!important;max-width:650px;margin:0!important;padding:82px 5vw 118px 7vw!important;align-self:center;z-index:2}
 .hero .kicker{color:#8a806e;margin-bottom:22px}.hero .kicker:before{width:24px;height:1px;background:var(--orange)}
@@ -312,6 +343,14 @@ h1,h2,h3,.content-hero h1,.content-hero aside strong,.team-heading h2{
 .hero-inner>p:not(.kicker){max-width:540px;font-size:16px!important;line-height:1.75!important;color:var(--muted)!important}
 .actions{margin-top:30px;gap:24px}.actions .hero-cta{min-height:48px;padding-inline:24px;border-radius:3px;box-shadow:none;font-size:13px}.actions .hero-cta:hover{box-shadow:none}.link-light{font-size:13px;font-weight:650;color:var(--navy);border:0;padding:0}
 .hero-stats{grid-column:1/-1;grid-row:1;align-self:end;position:relative!important;inset:auto!important;z-index:4;min-height:78px;padding:0 7vw;background:rgba(255,253,249,.96);border-top:1px solid rgba(23,50,74,.08);backdrop-filter:blur(8px)}
+
+/* Het ronde plaatslogo moet in de header ook werkelijk leesbaar zijn. */
+.site-header,.content-header{height:96px}
+.site-header .logo-lockup img,.content-header .brand-mark{width:78px;height:78px;flex:0 0 78px}
+@media(max-width:620px){
+  .site-header,.content-header{height:82px}
+  .site-header .logo-lockup img,.content-header .brand-mark{width:64px;height:64px;flex-basis:64px}
+}
 .hero-stats span{font-size:12px;letter-spacing:.005em}.hero-stats b{font-size:13px!important;font-weight:700}.hero-stats span>svg{width:17px;height:17px;stroke-width:2}
 
 .property-showcase{padding:64px 7vw 100px;grid-template-columns:1.4fr .8fr .8fr;grid-template-rows:320px;gap:12px;background:var(--white)}
@@ -406,7 +445,7 @@ h1,h2,h3,.content-hero h1,.content-hero aside strong,.team-heading h2{
 
 .compact-knowledge{text-align:center;background:#f7f5f0}.compact-knowledge .section-head{margin-bottom:30px}.compact-knowledge .knowledge-grid{max-width:1120px;margin:0 auto;gap:12px}.compact-knowledge .knowledge-grid a{min-height:0;padding:20px 23px;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;text-align:left;border-radius:16px;background:#fff}.compact-knowledge .knowledge-grid small{margin:0}.compact-knowledge .knowledge-grid h3{font-size:18px;line-height:1.25;margin:0}.compact-knowledge .knowledge-grid span{margin:0;white-space:nowrap}
 
-.content-header .brand-mark,.site-footer .brand-mark{display:block;width:54px;height:54px;border-radius:50%;font-size:0;background:url('/verhuurbeheer-torremolinos-logo.png') center/cover no-repeat;box-shadow:none}
+.content-header .brand-mark,.site-footer .brand-mark{display:block;width:54px;height:54px;font-size:0;background:url('/verhuurbeheer-torremolinos-logo.svg') center/contain no-repeat;box-shadow:none}
 .content-hero{padding-top:78px;padding-bottom:78px}.content-hero h1{max-width:860px}.content-hero>div>p:not(.eyebrow){max-width:760px;line-height:1.65}.content-hero aside{padding:25px;border-radius:18px;background:rgba(255,255,255,.48);border-top:0}
 .content-trustbar{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0 7vw;background:#fff;border-bottom:1px solid var(--line)}.content-trustbar span{min-height:82px;display:flex;align-items:center;justify-content:center;gap:8px;padding:17px 25px;text-align:center;font-size:13px}.content-trustbar span+span{border-left:1px solid var(--line)}.content-trustbar svg{flex:0 0 auto;width:19px;height:19px;color:#71a47b}.content-trustbar b{color:var(--navy)}.content-trustbar.content-trustbar-four{grid-template-columns:repeat(4,1fr);padding-inline:5vw}.content-trustbar-four span{padding-inline:18px;font-size:12px}
 .article-body>section{padding-top:50px;padding-bottom:50px}.article-body h2{font-size:clamp(32px,3.3vw,46px)}
@@ -420,15 +459,65 @@ h1,h2,h3,.content-hero h1,.content-hero aside strong,.team-heading h2{
   .article-body>section{padding-top:38px;padding-bottom:38px}.page-faq,.related,.team-section,.blog-lead,.content-cta{padding-top:60px;padding-bottom:60px}
 }
 
+/* Definitieve interactieve afwerking. */
+.service-card{box-shadow:0 10px 28px rgba(7,29,58,.08)!important}
+.service-card:hover{transform:translateY(-8px)!important;box-shadow:0 22px 48px rgba(7,29,58,.16)!important;border-color:rgba(223,117,73,.32)!important}
+.service-card:hover .service-icon{transform:translateY(-2px) scale(1.06)!important;background:var(--orange)!important;color:#fff!important}
+.rental-options a:hover{transform:translateX(7px);box-shadow:0 13px 32px rgba(7,29,58,.13);border-color:var(--orange)}
+.compact-knowledge .knowledge-grid a{box-shadow:0 8px 24px rgba(7,29,58,.07)!important}
+.compact-knowledge .knowledge-grid a:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(7,29,58,.14)!important}
+.compact-knowledge .knowledge-grid a:hover span{transform:translateX(4px)}
+.compact-knowledge .knowledge-grid a span{transition:transform .22s ease}
+.home-team-grid article{box-shadow:0 8px 24px rgba(7,29,58,.08)!important}
+.home-team-grid article:hover{transform:translateY(-7px)!important;box-shadow:0 19px 40px rgba(7,29,58,.16)!important}
+.home-team-grid article img{transition:transform .42s ease}
+.home-team-grid article:hover img{transform:scale(1.035)}
+.compact-regions .area-list b:hover{transform:translateY(-3px);background:#fff;box-shadow:0 8px 20px rgba(7,29,58,.09)}
+.property-showcase figure{box-shadow:0 12px 30px rgba(7,29,58,.10)}
+.property-showcase figure:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(7,29,58,.16)}
+.property-showcase figure:hover img{transform:scale(1.055)}
+
+@media (prefers-reduced-motion:reduce){
+  .service-card,.knowledge-grid a,.home-team-grid article,.rental-options a,.area-list b,.property-showcase figure,.property-showcase img,.home-team-grid img{transition:none!important;transform:none!important}
+}
+
 /* Definitieve navigatie en mobiele hero: geen absolute overlap. */
 .site-header,.content-header{position:sticky!important;top:0!important;z-index:100!important}
+
+/* Editorial photo story: more visual impact without adding visual noise. */
+.owner-experience{padding:110px 7vw;background:#fff;display:grid;grid-template-columns:.78fr 1.25fr .72fr;grid-template-rows:190px 330px;gap:18px;align-items:stretch}.owner-experience-copy{grid-row:1/3;display:flex;flex-direction:column;justify-content:center;padding-right:3vw}.owner-experience-copy h2{font-size:clamp(40px,4.4vw,64px);line-height:1.02;color:var(--navy);margin-bottom:25px}.owner-experience-copy>p:not(.kicker){color:var(--muted);font-size:17px;line-height:1.75}.owner-experience figure{position:relative;margin:0;overflow:hidden;background:var(--cream)}.owner-experience-main{grid-row:1/3}.owner-experience-detail{grid-row:2}.owner-experience img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s ease}.owner-experience figure:hover img{transform:scale(1.025)}.owner-experience figcaption{position:absolute;left:14px;right:14px;bottom:14px;padding:11px 13px;background:rgba(255,255,255,.9);color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:13px;line-height:1.35;backdrop-filter:blur(7px)}#woning-aanmelden{scroll-margin-top:84px}
+@media(max-width:950px){.owner-experience{grid-template-columns:1fr 1fr;grid-template-rows:auto 420px 220px;padding:85px 6vw}.owner-experience-copy{grid-column:1/-1;grid-row:auto;padding:0 0 25px;max-width:780px}.owner-experience-main{grid-column:1/-1;grid-row:auto}.owner-experience-detail{grid-column:2;grid-row:3}.owner-experience:after{content:"Lokale aandacht, van aankomst tot vertrek";grid-column:1;grid-row:3;display:flex;align-items:flex-end;padding:28px;background:var(--navy);color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,4vw,34px);line-height:1.15}}
+@media(max-width:620px){.owner-experience{grid-template-columns:1fr;grid-template-rows:auto 330px 190px;padding:72px 6vw;gap:10px}.owner-experience-copy{grid-column:1}.owner-experience-copy h2{font-size:40px}.owner-experience-main{grid-column:1}.owner-experience-detail{grid-column:1;grid-row:3}.owner-experience:after{display:none}#woning-aanmelden{scroll-margin-top:74px}}
 .whatsapp-float{position:fixed!important;left:max(18px,env(safe-area-inset-left))!important;right:auto!important;bottom:max(18px,env(safe-area-inset-bottom))!important;z-index:110!important}
+
+/* Mediterrane beeldstory: meer herkenbaar Estepona, zonder galerijgevoel. */
+.property-showcase{grid-template-columns:1.45fr .72fr .72fr!important;grid-template-rows:205px 205px!important;gap:10px!important;padding-top:30px!important;padding-bottom:70px!important}
+.property-showcase .showcase-wide{grid-row:1/3!important}
+.property-showcase .showcase-pool{grid-column:2;grid-row:1}
+.property-showcase .showcase-sunset{grid-column:3;grid-row:1}
+.property-showcase .showcase-garden{grid-column:2;grid-row:2}
+.property-showcase .showcase-terrace{grid-column:3;grid-row:2}
+.property-showcase figure:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(18,43,56,.28));pointer-events:none}
+.property-showcase figcaption{z-index:2;color:var(--navy)}
+.property-showcase .showcase-wide img{object-position:center 42%}
+.property-showcase .showcase-pool img{object-position:center 62%}
+.property-showcase .showcase-sunset img{object-position:center 65%}
+.property-showcase .showcase-garden img{object-position:center 48%}
+.property-showcase .showcase-terrace img{object-position:center 55%}
+@media(max-width:900px){.property-showcase{grid-template-columns:1.25fr .75fr!important;grid-template-rows:260px 150px 150px!important}.property-showcase .showcase-wide{grid-column:1;grid-row:1/3!important}.property-showcase .showcase-pool{grid-column:2;grid-row:1}.property-showcase .showcase-sunset{grid-column:2;grid-row:2}.property-showcase .showcase-garden{grid-column:1;grid-row:3}.property-showcase .showcase-terrace{grid-column:2;grid-row:3}}
+@media(max-width:620px){.property-showcase{grid-template-columns:1fr 1fr!important;grid-template-rows:235px 125px 125px!important;padding:20px 6vw 54px!important}.property-showcase .showcase-wide{grid-column:1/-1;grid-row:1!important}.property-showcase .showcase-pool{grid-column:1;grid-row:2}.property-showcase .showcase-sunset{grid-column:2;grid-row:2}.property-showcase .showcase-garden{grid-column:1;grid-row:3}.property-showcase .showcase-terrace{grid-column:2;grid-row:3}.property-showcase figcaption{display:none}.property-showcase figure{border-radius:2px}}
+
+/* Centrale conversieroute: iedere eigenaar-CTA eindigt op één rustige aanmeldpagina. */
+.home-owner-cta{display:grid;grid-template-columns:1.05fr .95fr;min-height:620px;background:#f2ece2}.home-owner-cta-image{background:url('/villa-zwembad-torremolinos.webp') center/cover}.home-owner-cta-copy{display:flex;flex-direction:column;justify-content:center;padding:85px 8vw 85px 7vw}.home-owner-cta-copy h2{font-size:clamp(40px,4.3vw,61px);line-height:1.05;color:var(--navy);margin-bottom:24px}.home-owner-cta-copy>p:not(.kicker){font-size:17px;line-height:1.75;color:var(--muted)}.home-owner-cta-copy ul{list-style:none;padding:8px 0 25px;margin:0}.home-owner-cta-copy li{padding:8px 0}.home-owner-cta-copy li:before{content:'✓';color:#6b9c76;font-weight:900;margin-right:12px}.home-owner-cta-copy .btn{align-self:flex-start}
+.signup-experience{display:grid;grid-template-columns:.9fr 1.1fr;gap:6vw;padding:90px 7vw 110px;background:#fff}.signup-story h2{font-size:clamp(38px,4vw,58px);line-height:1.05;color:var(--navy);margin-bottom:22px}.signup-story>p:not(.kicker){font-size:17px;line-height:1.72;color:var(--muted);max-width:580px}.signup-photo{position:relative;height:340px;margin-top:35px;overflow:hidden}.signup-photo img{width:100%;height:100%;object-fit:cover}.signup-photo span{position:absolute;left:18px;bottom:18px;padding:10px 14px;background:rgba(255,255,255,.9);color:var(--navy);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.signup-promises{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.signup-promises span{display:grid;grid-template-columns:24px 1fr;align-items:center;padding:15px 10px;border-top:1px solid var(--line)}.signup-promises svg{grid-row:1/3;width:18px;color:#6b9c76}.signup-promises b{font-size:13px;color:var(--navy)}.signup-promises small{font-size:11px;color:var(--muted)}.signup-form{align-self:start;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:40px;background:#f4f1eb;box-shadow:0 22px 65px rgba(23,55,75,.1)}.form-heading{grid-column:1/-1;display:flex;align-items:center;gap:17px;padding-bottom:20px;border-bottom:1px solid #ddd5c8}.form-heading>span{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900}.form-heading small{font-size:11px;color:var(--orange);font-weight:900;letter-spacing:.13em;text-transform:uppercase}.form-heading h2{font-size:29px;color:var(--navy);margin:3px 0 0}.signup-form label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:800;color:var(--navy)}.signup-form label>small{display:inline;color:var(--muted);font-weight:500}.signup-form input,.signup-form select,.signup-form textarea{width:100%;border:1px solid #d9d2c8;background:#fff;padding:15px;font:15px Arial;color:var(--ink);border-radius:2px}.signup-form input:focus,.signup-form select:focus,.signup-form textarea:focus{outline:3px solid rgba(229,111,69,.15);border-color:var(--orange)}.signup-form .wide{grid-column:1/-1}.signup-form .privacy-note{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-weight:500;text-align:center}.signup-form .privacy-note svg{width:15px;color:#6b9c76}.signup-form .privacy-note a{text-decoration:underline}.signup-form .form-cta{min-height:58px}
+@media(max-width:900px){.home-owner-cta,.signup-experience{grid-template-columns:1fr}.home-owner-cta-image{min-height:430px}.signup-story{max-width:760px}.signup-photo{height:400px}}
+@media(max-width:620px){.home-owner-cta-image{min-height:300px}.home-owner-cta-copy{padding:62px 6vw}.home-owner-cta-copy h2{font-size:39px}.signup-experience{padding:60px 6vw 75px;gap:42px}.signup-story h2{font-size:39px}.signup-photo{height:260px;margin-top:25px}.signup-promises{grid-template-columns:1fr}.signup-promises span{padding:10px 4px}.signup-form{grid-template-columns:1fr;padding:25px 20px;gap:17px}.signup-form>*{grid-column:1!important}.form-heading h2{font-size:23px}.form-heading>span{width:42px;height:42px}.signup-form .privacy-note{line-height:1.5}}
 .to-top{position:fixed!important;right:max(18px,env(safe-area-inset-right))!important;left:auto!important;bottom:max(18px,env(safe-area-inset-bottom))!important;z-index:110!important}
 
 @media(max-width:620px){
   .site-header,.content-header{height:78px!important;padding:0 6vw!important;background:#fff!important;box-shadow:0 7px 22px rgba(23,55,75,.08)!important}
   .hero{display:flex!important;flex-direction:column!important;min-height:0!important;padding:0!important;overflow:hidden!important;background:#f2efe8!important}
-  .hero:before{content:""!important;position:relative!important;inset:auto!important;order:1!important;display:block!important;flex:0 0 auto!important;width:88vw!important;height:245px!important;margin:28px 6vw 0!important;border-radius:26px!important;aspect-ratio:auto!important;background:url('/torremolinos-hero.webp') 64% center/cover no-repeat!important;opacity:1!important;z-index:0!important;box-shadow:none!important}
+  .hero:before{content:""!important;position:relative!important;inset:auto!important;order:1!important;display:block!important;flex:0 0 auto!important;width:88vw!important;height:245px!important;margin:28px 6vw 0!important;border-radius:26px!important;aspect-ratio:auto!important;background:url('/terras-zonsondergang-torremolinos.webp') center/cover no-repeat!important;opacity:1!important;z-index:0!important;box-shadow:none!important}
   .hero-inner{order:2!important;position:relative!important;width:88vw!important;margin:0 6vw!important;padding:32px 0 38px!important;z-index:1!important}
   .hero .kicker{max-width:320px!important;margin-bottom:16px!important;color:#817d70!important}
   .hero h1{max-width:350px!important;margin-bottom:20px!important;font-size:40px!important;line-height:1.06!important;color:#555344!important}
@@ -440,29 +529,13 @@ h1,h2,h3,.content-hero h1,.content-hero aside strong,.team-heading h2{
 }
 
 /* Definitieve fotografie-override na alle responsive regels. */
-.hero:before{background-image:url('/luxe-woning-torremolinos-zeezicht.webp')!important;background-position:center center!important}
-@media(max-width:760px){.hero:before{background-image:url('/luxe-woning-torremolinos-zeezicht.webp')!important;background-position:center 55%!important}}
+.hero:before{background-image:url('/terras-zonsondergang-torremolinos.webp')!important;background-position:center center!important}
+@media(max-width:760px){.hero:before{background-image:url('/terras-zonsondergang-torremolinos.webp')!important;background-position:center center!important}}
 
-
-/* Consistent, leesbaar Torremolinos-logo in de hoofdnavigatie. */
-.site-header .logo-lockup img,
-.content-header .brand-logo{
-  display:block;
-  width:78px;
-  height:78px;
-  flex:0 0 78px;
-  object-fit:contain;
-  border-radius:0;
-  box-shadow:none;
-}
+/* Maak het ronde Torremolinos-logo leesbaar in plaats van een miniatuur. */
+.site-header,.content-header{height:96px!important}
+.site-header .logo-lockup img,.content-header .brand-mark{width:78px!important;height:78px!important;flex:0 0 78px}
 @media(max-width:620px){
-  .site-header .logo-lockup img,
-  .content-header .brand-logo{
-    width:62px;
-    height:62px;
-    flex-basis:62px;
-  }
+  .site-header,.content-header{height:82px!important}
+  .site-header .logo-lockup img,.content-header .brand-mark{width:64px!important;height:64px!important;flex-basis:64px}
 }
-
-/* Transparant Torremolinos-logo: nooit een gekleurd vierkant/vlak achter het merk. */
-.content-header .brand-mark,.site-footer .brand-mark,.footer-brand .brand-mark,.footer-brand .logo-lockup:before{background-color:transparent!important;background-image:url('/verhuurbeheer-torremolinos-logo.png')!important;background-position:center!important;background-size:contain!important;background-repeat:no-repeat!important;border-radius:0!important;box-shadow:none!important}
