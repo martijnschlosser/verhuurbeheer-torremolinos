@@ -129,6 +129,7 @@ const relatedBySlug: Record<string, string[]> = {
     "verhuurlicentie-torremolinos",
     "kosten-verhuurbeheer-torremolinos",
     "dynamische-prijzen-vakantiewoning",
+    "vastgoedbeheer-torremolinos",
   ],
   "vastgoedbeheer-torremolinos": [
     "schoonmaak-onderhoud-torremolinos",
@@ -154,6 +155,7 @@ const relatedBySlug: Record<string, string[]> = {
     "vakantieverhuur-torremolinos",
     "midterm-verhuur-torremolinos",
     "langetermijnverhuur-torremolinos",
+    "dynamische-prijzen-vakantiewoning",
   ],
   "dynamische-prijzen-vakantiewoning": [
     "vakantieverhuur-torremolinos",
