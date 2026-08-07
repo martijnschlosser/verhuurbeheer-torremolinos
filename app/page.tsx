@@ -280,7 +280,7 @@ export default function Home() {
           <p className="kicker">
             Voor Nederlandse woningeigenaren aan de Costa del Sol
           </p>
-          <h1>Fullservice verhuurbeheer in Torremolinos</h1>
+          <h1>Geniet van je tweede huis in Torremolinos, wij regelen de rest.</h1>
           <p>
             Wij verzorgen de verhuur van je vakantiewoning van A tot Z: van
             Airbnb en Booking.com tot gastenservice, schoonmaak, onderhoud en
