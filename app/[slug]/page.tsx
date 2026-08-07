@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { contentBySlug, contentPages } from "../content";
 import { CookiePreferencesButton } from "../CookieConsent";
@@ -188,7 +187,7 @@ const contextualLinksBySlug: Record<
   { href: string; label: string }[]
 > = {
   "vakantieverhuur-torremolinos": [
-    { href: "/dynamische-prijzen-vakantiewoning/", label: "dynamische prijsstrategie voor uw vakantiewoning" },
+    { href: "/dynamische-prijzen-vakantiewoning/", label: "dynamische prijsstrategie voor je vakantiewoning" },
     { href: "/verhuurlicentie-torremolinos/", label: "voorwaarden voor een verhuurlicentie in Torremolinos" },
     { href: "/kosten-verhuurbeheer-torremolinos/", label: "kosten van verhuurbeheer in Torremolinos" },
   ],
@@ -205,12 +204,12 @@ const contextualLinksBySlug: Record<
     { href: "/vakantieverhuur-torremolinos/", label: "fullservice vakantieverhuurbeheer" },
   ],
   "schoonmaak-onderhoud-torremolinos": [
-    { href: "/vastgoedbeheer-torremolinos/", label: "vastgoedbeheer voor uw tweede woning" },
-    { href: "/renovatie-inrichting-torremolinos/", label: "renovatie en inrichting van uw woning" },
+    { href: "/vastgoedbeheer-torremolinos/", label: "vastgoedbeheer voor je tweede woning" },
+    { href: "/renovatie-inrichting-torremolinos/", label: "renovatie en inrichting van je woning" },
   ],
   "renovatie-inrichting-torremolinos": [
     { href: "/vastgoedbeheer-torremolinos/", label: "vastgoedbeheer na de oplevering" },
-    { href: "/vakantieverhuur-torremolinos/", label: "uw woning professioneel laten verhuren" },
+    { href: "/vakantieverhuur-torremolinos/", label: "je woning professioneel laten verhuren" },
   ],
   "kosten-verhuurbeheer-torremolinos": [
     { href: "/vakantieverhuur-torremolinos/", label: "wat fullservice vakantieverhuur omvat" },
@@ -437,12 +436,12 @@ export default async function ContentRoute({
               <b>Veilig sleutelbeheer</b> en toegang voor leveranciers
             </>,
             <>
-              <b>Onderhoudscoördinatie</b> na uw akkoord
+              <b>Onderhoudscoördinatie</b> na je akkoord
             </>,
           ]
         : [
             <>
-              <b>Airbnb &amp; Booking</b> op uw eigen naam
+              <b>Airbnb &amp; Booking</b> op je eigen naam
             </>,
             <>
               <b>Vast Nederlandstalig</b> contactpersoon
@@ -552,7 +551,7 @@ export default async function ContentRoute({
           <p>{page.intro}</p>
           {page.slug !== "contact" && page.slug !== "woning-aanmelden" && (
             <a className="button button-primary" href="/woning-aanmelden/">
-              Bespreek uw woning →
+              Bespreek je woning →
             </a>
           )}
         </div>
@@ -560,7 +559,7 @@ export default async function ContentRoute({
           <small>{page.price ? "Vanaf-prijs" : "Lokale expertise"}</small>
           <strong>{page.price ?? "Torremolinos · Costa del Sol"}</strong>
           <p>
-            Nederlandstalig contact en een lokale uitvoering rond uw woning.
+            Nederlandstalig contact en een lokale uitvoering rond je woning.
           </p>
         </aside>
       </section>
@@ -578,9 +577,9 @@ export default async function ContentRoute({
       {page.slug === "woning-aanmelden" && (
         <section className="signup-experience" id="woningformulier">
           <div className="signup-story">
-            <p className="kicker orange">Uw woning in goede handen</p>
+            <p className="kicker orange">Je woning in goede handen</p>
             <h2>Een kleine eerste stap. Daarna regelen wij de rest.</h2>
-            <p>Vertel ons kort over uw woning. Binnen 2 werkdagen neemt ons Nederlandstalige team persoonlijk contact met u op.</p>
+            <p>Vertel ons kort over je woning. Binnen 2 werkdagen neemt ons Nederlandstalige team persoonlijk contact met je op.</p>
             <div className="signup-photo">
               <img src={siteConfig.assets.signup} alt={`Zonnig terras met zeezicht in ${siteConfig.location.city}`} width="1600" height="1067" loading="eager" />
               <span>Torremolinos · Costa del Sol</span>
@@ -592,21 +591,21 @@ export default async function ContentRoute({
             </div>
           </div>
           <form className="signup-form" action={leadFormAction} method="post">
-            <div className="form-heading"><span>01</span><div><small>Uw woning aanmelden</small><h2>Vertel ons over uw woning</h2></div></div>
+            <div className="form-heading"><span>01</span><div><small>Je woning aanmelden</small><h2>Vertel ons over je woning</h2></div></div>
             <input type="hidden" name="_subject" value={leadSubject()} />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
             <input type="hidden" name="bron_website" value={siteConfig.template.sourceWebsite} />
             <input type="hidden" name="bron_formulier" value="Woning aanmelden" />
-            <label>Naam<input name="naam" autoComplete="name" placeholder="Uw voor- en achternaam" required /></label>
+            <label>Naam<input name="naam" autoComplete="name" placeholder="Je voor- en achternaam" required /></label>
             <label>E-mailadres<input type="email" name="email" autoComplete="email" placeholder="naam@voorbeeld.nl" required /></label>
             <label>Telefoonnummer <small>(optioneel)</small><input type="tel" name="telefoon" autoComplete="tel" placeholder="+31 of +34" /></label>
             <label>Locatie woning<input name="locatie" placeholder="Bijv. La Carihuela, Playamar of Los Álamos" required /></label>
-            <label>Type woning<select name="type" defaultValue=""><option value="" disabled>Kies uw woningtype</option><option>Appartement</option><option>Villa</option><option>Townhouse</option><option>Anders</option></select></label>
+            <label>Type woning<select name="type" defaultValue=""><option value="" disabled>Kies je woningtype</option><option>Appartement</option><option>Villa</option><option>Townhouse</option><option>Anders</option></select></label>
             <label>Waar kunnen we bij helpen?<select name="dienst" defaultValue=""><option value="" disabled>Kies een dienst</option><option>Vakantieverhuur</option><option>Seizoens- en midtermverhuur</option><option>Langetermijnverhuur</option><option>Vastgoedbeheer</option><option>Schoonmaak & onderhoud</option><option>Renovatie & inrichting</option><option>Ik wil graag advies</option></select></label>
-            <label className="wide">Vertel kort iets over uw woning en wensen <small>(optioneel)</small><textarea name="bericht" rows={4} placeholder="Bijvoorbeeld: aantal slaapkamers, eigen gebruik en gewenste startdatum" /></label>
+            <label className="wide">Vertel kort iets over je woning en wensen <small>(optioneel)</small><textarea name="bericht" rows={4} placeholder="Bijvoorbeeld: aantal slaapkamers, eigen gebruik en gewenste startdatum" /></label>
             <button className="btn wide form-cta" type="submit">Woning vrijblijvend aanmelden →</button>
-            <small className="wide privacy-note"><CheckCircle2 aria-hidden="true" /> Uw gegevens worden veilig verwerkt volgens onze <a href="/privacyverklaring/">privacyverklaring</a>.</small>
+            <small className="wide privacy-note"><CheckCircle2 aria-hidden="true" /> Je gegevens worden veilig verwerkt volgens onze <a href="/privacyverklaring/">privacyverklaring</a>.</small>
           </form>
         </section>
       )}
@@ -614,10 +613,10 @@ export default async function ContentRoute({
         <section className="contact contact-page-form" id="woningformulier">
           <div className="contact-intro">
             <p className="kicker">Persoonlijk kennismaken</p>
-            <h2>Vertel ons over uw woning</h2>
+            <h2>Vertel ons over je woning</h2>
             <p>
-              Deel kort uw plannen. Ons Nederlandstalige team neemt persoonlijk
-              contact met u op.
+              Deel kort je plannen. Ons Nederlandstalige team neemt persoonlijk
+              contact met je op.
             </p>
             <div className="contact-options">
               <a href={emailHref}>
@@ -691,14 +690,14 @@ export default async function ContentRoute({
               </select>
             </label>
             <label className="wide">
-              Uw vraag of toelichting
+              Je vraag of toelichting
               <textarea name="bericht" rows={5} />
             </label>
             <button className="btn wide form-cta" type="submit">
-              Verstuur uw aanvraag →
+              Verstuur je aanvraag →
             </button>
             <small className="wide privacy-note">
-              Wij verwerken uw gegevens volgens onze{" "}
+              Wij verwerken je gegevens volgens onze{" "}
               <a href="/privacyverklaring/">privacyverklaring</a>.
             </small>
           </form>
@@ -733,7 +732,7 @@ export default async function ContentRoute({
           </a>
           <div className="blog-list-heading">
             <p className="eyebrow">Alle artikelen</p>
-            <h2>Praktische kennis over uw woning in Spanje</h2>
+            <h2>Praktische kennis over je woning in Spanje</h2>
           </div>
           <div className="blog-card-grid">
             {blogArticles.slice(1).map((article) => {
@@ -770,7 +769,7 @@ export default async function ContentRoute({
                 loading="lazy"
               />
               <figcaption>
-                Lokale aandacht voor presentatie, beheer en uitvoering rond uw
+                Lokale aandacht voor presentatie, beheer en uitvoering rond je
                 woning.
               </figcaption>
             </figure>
@@ -813,7 +812,7 @@ export default async function ContentRoute({
         <aside className="official-sources" aria-label="Officiële bronnen">
           <strong>Officiële informatie controleren</strong>
           <p>
-            Regels kunnen wijzigen. Controleer uw situatie altijd aan de hand
+            Regels kunnen wijzigen. Controleer je situatie altijd aan de hand
             van de actuele informatie van de bevoegde instanties.
           </p>
           <a
@@ -893,7 +892,7 @@ export default async function ContentRoute({
       {page.type === "gids" && (
         <section className="blog-lead">
           <div className="blog-lead-person">
-            <Image
+            <img
               src="/sophie-torremolinos.webp"
               alt="Sophie van Verhuurbeheer Torremolinos"
               width={1088}
@@ -904,12 +903,12 @@ export default async function ContentRoute({
               <p className="eyebrow">Persoonlijk advies</p>
               <h2>Meer weten over dit onderwerp?</h2>
               <p>
-                Heeft u een vraag over dit artikel of wilt u weten wat dit voor
-                uw woning betekent? Sophie denkt graag met u mee.
+                Heeft u een vraag over dit artikel of wil je weten wat dit voor
+                je woning betekent? Sophie denkt graag met u mee.
               </p>
               <strong>Sophie · Backoffice</strong>
               <a href={whatsappHref("Hallo Sophie, ik heb een vraag over dit artikel")}>
-                Stel uw vraag via WhatsApp →
+                Stel je vraag via WhatsApp →
               </a>
             </div>
           </div>
@@ -940,21 +939,21 @@ export default async function ContentRoute({
               <input type="tel" name="telefoon" autoComplete="tel" />
             </label>
             <label>
-              Locatie van uw woning
+              Locatie van je woning
               <input
                 name="locatie"
                 placeholder="Bijv. Playamar, La Carihuela of Los Álamos"
               />
             </label>
             <label className="wide">
-              Uw vraag
+              Je vraag
               <textarea name="vraag" rows={5} required />
             </label>
             <button className="button button-primary wide" type="submit">
-              Verstuur uw vraag →
+              Verstuur je vraag →
             </button>
             <small className="wide">
-              Sophie neemt persoonlijk contact met u op.
+              Sophie neemt persoonlijk contact met je op.
             </small>
           </form>
         </section>
@@ -962,9 +961,9 @@ export default async function ContentRoute({
       {page.slug !== "contact" && page.slug !== "woning-aanmelden" && (
         <section className="content-cta">
           <p className="eyebrow">Vrijblijvend kennismaken</p>
-          <h2>Wilt u weten welke aanpak bij uw woning past?</h2>
+          <h2>Wil je weten welke aanpak bij je woning past?</h2>
           <p>
-            Vertel ons kort waar uw woning ligt en hoe u deze wilt gebruiken.
+            Vertel ons kort waar je woning ligt en hoe je deze wilt gebruiken.
             Dan bespreken we de mogelijkheden voor beheer en verhuur in
             Torremolinos.
           </p>
