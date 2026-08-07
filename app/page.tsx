@@ -319,7 +319,7 @@ export default function Home() {
       >
         <figure className="showcase-wide">
           <img
-            src="/urbanisatie-zwembad-estepona.webp"
+            src="/luxe-woning-torremolinos-zeezicht.webp"
             alt="Mediterrane urbanisatie met zwembad aan de Costa del Sol"
             width="1800"
             height="1013"
@@ -329,7 +329,7 @@ export default function Home() {
         </figure>
         <figure className="showcase-pool">
           <img
-            src="/zonnig-terras-zeezicht-estepona.webp"
+            src="/zonnig-terras-zeezicht-torremolinos.webp"
             alt="Zonnig terras met uitzicht op zee aan de Costa del Sol"
             width="1200"
             height="800"
@@ -339,7 +339,7 @@ export default function Home() {
         </figure>
         <figure className="showcase-sunset">
           <img
-            src="/woning-interieur-estepona.webp"
+            src="/torremolinos-hero.webp"
             alt="Licht en verzorgd interieur van een vakantiewoning"
             width="1500"
             height="1000"
@@ -349,7 +349,7 @@ export default function Home() {
         </figure>
         <figure className="showcase-garden">
           <img
-            src="/urbanisatie-zwembad-estepona.webp"
+            src="/luxe-woning-torremolinos-zeezicht.webp"
             alt="Witte urbanisatie met groene tuin en zwembad in Torremolinos"
             width="1600"
             height="1067"
@@ -358,7 +358,7 @@ export default function Home() {
         </figure>
         <figure className="showcase-terrace">
           <img
-            src="/zonnig-terras-zeezicht-estepona.webp"
+            src="/zonnig-terras-zeezicht-torremolinos.webp"
             alt="Zonnig terras met zeezicht in Torremolinos"
             width="1600"
             height="1067"
@@ -500,7 +500,7 @@ export default function Home() {
         </div>
         <figure className="owner-experience-main">
           <img
-            src="/torremolinos-property.webp"
+            src="/luxe-woning-torremolinos-zeezicht.webp"
             alt="Verzorgde woning in Torremolinos met uitzicht op zee"
             width="1200"
             height="800"
@@ -509,7 +509,7 @@ export default function Home() {
         </figure>
         <figure className="owner-experience-detail">
           <img
-            src="/woning-interieur-estepona.webp"
+            src="/torremolinos-hero.webp"
             alt="Licht en verzorgd interieur van een woning in Torremolinos"
             width="1200"
             height="800"
