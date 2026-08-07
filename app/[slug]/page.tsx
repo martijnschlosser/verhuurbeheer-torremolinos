@@ -14,7 +14,7 @@ const seoH1BySlug: Record<string, string> = {
   "renovatie-inrichting-torremolinos": "Renovatie en inrichting in Torremolinos",
   "kosten-verhuurbeheer-torremolinos": "Wat kost verhuurbeheer in Torremolinos?",
   "dynamische-prijzen-vakantiewoning":
-    "Dynamische prijzen voor een vakantiewoning in Torremolinos",
+    "Rendement vakantiewoning in Torremolinos met dynamische prijzen",
   "zelf-verhuren-of-verhuurbeheer":
     "Zelf verhuren of verhuurbeheer in Torremolinos?",
   "verhuurlicentie-torremolinos":
