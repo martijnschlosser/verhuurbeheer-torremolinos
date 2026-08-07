@@ -40,7 +40,7 @@ export const siteConfig = {
     whatsapp: "31852128105",
   },
   pricing: {
-    holidayRental: "Voorstel op maat",
+    holidayRental: "Vanaf 18%",
     midterm: "Eenmalig 1 maand huur",
     longterm: "Eenmalig 1 maand huur",
   },
