@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { contentBySlug, contentPages } from "../content";
 import { CookiePreferencesButton } from "../CookieConsent";
+import { FormSubmit } from "../FormSubmit";
 import { CheckCircle2, Facebook, Instagram, Mail } from "lucide-react";
 import { absoluteUrl, emailHref, leadFormAction, leadHref, leadSubject, siteConfig, whatsappHref } from "../site-config";
 
@@ -630,10 +631,7 @@ export default async function ContentRoute({
               </a>
             </div>
           </div>
-          <form
-            action={leadFormAction}
-            method="post"
-          >
+          <FormSubmit action={leadFormAction} thankYouPath={siteConfig.template.thankYouPath}>
             <input type="hidden" name="_subject" value="Nieuwe lead via Verhuurbeheer Torremolinos – contactpagina" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
@@ -702,7 +700,7 @@ export default async function ContentRoute({
               Wij verwerken je gegevens volgens onze{" "}
               <a href="/privacyverklaring/">privacyverklaring</a>.
             </small>
-          </form>
+          </FormSubmit>
         </section>
       )}
       {page.slug === "blog" && featuredBlog ? (
