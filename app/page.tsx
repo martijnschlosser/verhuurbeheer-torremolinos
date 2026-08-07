@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CookiePreferencesButton } from "./CookieConsent";
 import {
   BedDouble,
@@ -95,7 +94,7 @@ const services = [
 const faqs = [
   [
     "Wat kost vakantieverhuurbeheer in Torremolinos?",
-    "Na een kennismaking en woningcheck ontvangt u een voorstel dat past bij de woning, de verhuurvorm en de gewenste dienstverlening. We leggen vooraf duidelijk vast wat inbegrepen is.",
+    "Na een kennismaking en woningcheck ontvang je een voorstel dat past bij de woning, de verhuurvorm en de gewenste dienstverlening. We leggen vooraf duidelijk vast wat inbegrepen is.",
   ],
   [
     "Wat kost midterm- of langetermijnverhuur?",
@@ -107,7 +106,7 @@ const faqs = [
   ],
   [
     "Kan ik mijn woning zelf blijven gebruiken?",
-    "Zeker. We blokkeren uw eigen verblijven vooraf en stemmen de verhuurstrategie af op de periodes waarin u zelf naar Torremolinos wilt komen.",
+    "Zeker. We blokkeren je eigen verblijven vooraf en stemmen de verhuurstrategie af op de periodes waarin je zelf naar Torremolinos wilt komen.",
   ],
   [
     "Op welke verhuurplatforms wordt mijn woning aangeboden?",
@@ -283,13 +282,13 @@ export default function Home() {
           </p>
           <h1>Fullservice verhuurbeheer in Torremolinos</h1>
           <p>
-            Wij verzorgen de verhuur van uw vakantiewoning van A tot Z: van
+            Wij verzorgen de verhuur van je vakantiewoning van A tot Z: van
             Airbnb en Booking.com tot gastenservice, schoonmaak, onderhoud en
-            controles ter plaatse. Eén Nederlandstalig aanspreekpunt voor u als
+            controles ter plaatse. Eén Nederlandstalig aanspreekpunt voor je als
             eigenaar.
           </p>
           <div className="actions">
-            <a className="btn hero-cta" href="/contact/">
+            <a className="btn hero-cta" href={leadHref}>
               Ontvang vrijblijvend verhuuradvies
             </a>
             <a className="link-light" href="#diensten">
@@ -300,7 +299,7 @@ export default function Home() {
         <div className="hero-stats">
           <span>
             <CheckCircle2 aria-hidden="true" />
-            <b>Airbnb &amp; Booking</b> op uw eigen naam
+            <b>Airbnb &amp; Booking</b> op je eigen naam
           </span>
           <span>
             <CheckCircle2 aria-hidden="true" />
@@ -373,7 +372,7 @@ export default function Home() {
           <h2>Alle onderdelen van verhuurbeheer goed op elkaar afgestemd</h2>
           <p>
             Van de advertentie en gastenservice tot de wisselschoonmaak en
-            technische opvolging: u hoeft niet zelf tussen verschillende
+            technische opvolging: je hoeft niet zelf tussen verschillende
             partijen te schakelen.
           </p>
         </div>
@@ -400,7 +399,7 @@ export default function Home() {
         <div>
           <b>Vakantieverhuur? Controleer tijdig de verhuurvoorwaarden.</b>
           <p>
-            Bekijk welke registratie- en vergunningspunten voor uw woning
+            Bekijk welke registratie- en vergunningspunten voor je woning
             relevant kunnen zijn.
           </p>
         </div>
@@ -412,7 +411,7 @@ export default function Home() {
           <p className="kicker">Welke verhuurvorm past?</p>
           <h2>Niet iedere woning vraagt om dezelfde verhuurstrategie.</h2>
           <p>
-            De ligging, het type woning en uw eigen gebruik bepalen welke route
+            De ligging, het type woning en je eigen gebruik bepalen welke route
             logisch is. We vergelijken vakantieverhuur, tijdelijke verhuur en
             langetermijnverhuur voordat we een concreet plan uitwerken.
           </p>
@@ -447,8 +446,8 @@ export default function Home() {
             <div>
               <h3>Kennismaking</h3>
               <p>
-                We bespreken uw woning, uw doelen, het gewenste eigen gebruik
-                en de verhuurvorm die u voor ogen heeft.
+                We bespreken je woning, je doelen, het gewenste eigen gebruik
+                en de verhuurvorm die je voor ogen heeft.
               </p>
             </div>
           </li>
@@ -477,7 +476,7 @@ export default function Home() {
             <div>
               <h3>Start en opvolging</h3>
               <p>
-                Na de start coördineren wij het dagelijkse beheer en houden we u
+                Na de start coördineren wij het dagelijkse beheer en houden we je
                 op de hoogte van reserveringen en relevante woningzaken.
               </p>
             </div>
@@ -487,15 +486,15 @@ export default function Home() {
 
       <section className="owner-experience" aria-label="De beleving van professioneel woningbeheer">
         <div className="owner-experience-copy">
-          <p className="kicker orange">Uw woning, onze aandacht</p>
+          <p className="kicker orange">Je woning, onze aandacht</p>
           <h2>Meer rust. Meer grip. Een woning die er altijd goed bij staat.</h2>
           <p>
-            Van de eerste indruk van uw advertentie tot de controle na vertrek:
+            Van de eerste indruk van je advertentie tot de controle na vertrek:
             we bewaken de uitstraling én de praktische details die het verschil
             maken voor gasten en eigenaren.
           </p>
           <a className="dark-link" href="/woning-aanmelden/">
-            Bespreek uw woning met ons →
+            Bespreek je woning met ons →
           </a>
         </div>
         <figure className="owner-experience-main">
@@ -546,7 +545,7 @@ export default function Home() {
           <p className="kicker orange">Ons team</p>
           <h2>Een vast aanspreekpunt, ondersteund door mensen ter plaatse.</h2>
           <p>
-            De afspraken over uw woning blijven bij één contactpersoon. Voor de
+            De afspraken over je woning blijven bij één contactpersoon. Voor de
             uitvoering werken we met collega’s en vakmensen aan de Costa del Sol,
             zodat vragen en werkzaamheden niet tussen partijen blijven liggen.
           </p>
@@ -622,11 +621,11 @@ export default function Home() {
       <section className="contact" id="contact">
         <div>
           <p className="kicker">Vrijblijvende verhuurprognose</p>
-          <h2>Bespreek de verhuurmogelijkheden van uw woning in Torremolinos</h2>
+          <h2>Bespreek de verhuurmogelijkheden van je woning in Torremolinos</h2>
           <p>
-            Deel de locatie, het woningtype en uw plannen voor eigen gebruik.
+            Deel de locatie, het woningtype en je plannen voor eigen gebruik.
             Dan kijken we persoonlijk welke verhuurvorm en aanpak realistisch
-            bij uw situatie passen.
+            bij je situatie passen.
           </p>
           <p>
             <a href={emailHref}>
@@ -636,9 +635,9 @@ export default function Home() {
           <ul>
             <li>Vrijblijvend en zonder verplichtingen</li>
             <li>Persoonlijk Nederlandstalig contact</li>
-            <li>Duidelijk advies passend bij uw woning</li>
+            <li>Duidelijk advies passend bij je woning</li>
           </ul>
-          <a className="btn" href={leadHref}>Meld uw woning aan →</a>
+          <a className="btn" href={leadHref}>Meld je woning aan →</a>
         </div>
         <form
           action={leadFormAction}
@@ -692,10 +691,10 @@ export default function Home() {
             <textarea name="woning" rows={4} />
           </label>
           <button className="btn wide form-cta" type="submit">
-            Vraag uw prognose aan →
+            Vraag je prognose aan →
           </button>
           <small className="wide privacy-note">
-            Wij verwerken uw gegevens volgens onze{" "}
+            Wij verwerken je gegevens volgens onze{" "}
             <a href="/privacyverklaring/">privacyverklaring</a>.
           </small>
         </form>
@@ -703,7 +702,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-brand">
           <a className="logo-lockup" href="/" aria-label="Naar Home">
-            <Image
+            <img
               src="/verhuurbeheer-torremolinos-logo.png?v=torremolinos-20260805"
               alt="Verhuurbeheer Torremolinos"
               width={640}
