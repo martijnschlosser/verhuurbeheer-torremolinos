@@ -22,6 +22,7 @@ export const siteConfig = {
     hero: "/torremolinos-hero.webp",
     social: "/luxe-woning-torremolinos-zeezicht.webp",
     signup: "/zonnig-terras-zeezicht-torremolinos.webp",
+    sophie: "/sophie-torremolinos.webp",
   },
   domain: "https://verhuurbeheertorremolinos.nl",
   contact: { email: "contact@verhuurbeheerspanje.nl", whatsapp: "31852128105" },
