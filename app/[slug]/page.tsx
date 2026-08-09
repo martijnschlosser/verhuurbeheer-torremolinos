@@ -45,7 +45,7 @@ const team = [
     name: "Sophie",
     role: "Backoffice",
     languages: "NL · EN · ES",
-    image: "/sophie-torremolinos.webp",
+    image: siteConfig.assets.sophie,
     alt: "Sophie, Nederlandstalig aanspreekpunt en backoffice bij Verhuurbeheer Spanje",
   },
   {
@@ -232,6 +232,13 @@ const contextualLinksBySlug: Record<
     { href: "/zelf-verhuren-of-verhuurbeheer/", label: "zelf verhuren of beheer uitbesteden" },
   ],
 };
+
+Object.assign(relatedBySlug, {
+  "strandappartement-onderhoud-torremolinos": ["schoonmaak-onderhoud-torremolinos","vakantieverhuur-torremolinos","vastgoedbeheer-torremolinos","kosten-verhuurbeheer-torremolinos","zelf-verhuren-of-verhuurbeheer"],
+  "schoonmaak-onderhoud-torremolinos": ["strandappartement-onderhoud-torremolinos","vakantieverhuur-torremolinos","vastgoedbeheer-torremolinos","kosten-verhuurbeheer-torremolinos","zelf-verhuren-of-verhuurbeheer"],
+  "vakantieverhuur-torremolinos": ["strandappartement-onderhoud-torremolinos","schoonmaak-onderhoud-torremolinos","vastgoedbeheer-torremolinos","kosten-verhuurbeheer-torremolinos","zelf-verhuren-of-verhuurbeheer"],
+  "vastgoedbeheer-torremolinos": ["strandappartement-onderhoud-torremolinos","schoonmaak-onderhoud-torremolinos","vakantieverhuur-torremolinos","kosten-verhuurbeheer-torremolinos","zelf-verhuren-of-verhuurbeheer"],
+});
 
 const contentVisualBySlug: Record<string, { src: string; alt: string }> = {
   "vakantieverhuur-torremolinos": {
@@ -899,7 +906,7 @@ export default async function ContentRoute({
         <section className="blog-lead">
           <div className="blog-lead-person">
             <img
-              src="/sophie-torremolinos.webp"
+              src={siteConfig.assets.sophie}
               alt="Sophie van Verhuurbeheer Torremolinos"
               width={1088}
               height={1100}
