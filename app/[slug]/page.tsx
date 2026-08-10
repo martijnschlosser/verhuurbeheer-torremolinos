@@ -240,6 +240,13 @@ Object.assign(relatedBySlug, {
   "vastgoedbeheer-torremolinos": ["strandappartement-onderhoud-torremolinos","schoonmaak-onderhoud-torremolinos","vakantieverhuur-torremolinos","kosten-verhuurbeheer-torremolinos","zelf-verhuren-of-verhuurbeheer"],
 });
 
+Object.assign(relatedBySlug, {
+  "vocht-zoutlucht-appartement-torremolinos": ["schoonmaak-onderhoud-torremolinos","vastgoedbeheer-torremolinos","tweede-woning-beheer-torremolinos","strandappartement-onderhoud-torremolinos","kosten-verhuurbeheer-torremolinos"],
+  "schoonmaak-onderhoud-torremolinos": ["vocht-zoutlucht-appartement-torremolinos", ...(relatedBySlug["schoonmaak-onderhoud-torremolinos"] ?? []).filter((slug) => slug !== "vocht-zoutlucht-appartement-torremolinos")].slice(0, 6),
+  "vastgoedbeheer-torremolinos": ["vocht-zoutlucht-appartement-torremolinos", ...(relatedBySlug["vastgoedbeheer-torremolinos"] ?? []).filter((slug) => slug !== "vocht-zoutlucht-appartement-torremolinos")].slice(0, 6),
+  "tweede-woning-beheer-torremolinos": ["vocht-zoutlucht-appartement-torremolinos", ...(relatedBySlug["tweede-woning-beheer-torremolinos"] ?? []).filter((slug) => slug !== "vocht-zoutlucht-appartement-torremolinos")].slice(0, 6),
+});
+
 const contentVisualBySlug: Record<string, { src: string; alt: string }> = {
   "vakantieverhuur-torremolinos": {
     src: "/luxe-woning-torremolinos-zeezicht.webp",
