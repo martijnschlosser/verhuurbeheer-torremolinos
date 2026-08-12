@@ -247,6 +247,13 @@ Object.assign(relatedBySlug, {
   "tweede-woning-beheer-torremolinos": ["vocht-zoutlucht-appartement-torremolinos", ...(relatedBySlug["tweede-woning-beheer-torremolinos"] ?? []).filter((slug) => slug !== "vocht-zoutlucht-appartement-torremolinos")].slice(0, 6),
 });
 
+Object.assign(relatedBySlug, {
+  "appartement-na-leegstand-openen-torremolinos": ["tweede-woning-beheer-torremolinos","vastgoedbeheer-torremolinos","schoonmaak-onderhoud-torremolinos","vocht-zoutlucht-appartement-torremolinos","kosten-verhuurbeheer-torremolinos"],
+  "tweede-woning-beheer-torremolinos": ["appartement-na-leegstand-openen-torremolinos", ...(relatedBySlug["tweede-woning-beheer-torremolinos"] ?? []).filter((slug) => slug !== "appartement-na-leegstand-openen-torremolinos")].slice(0, 6),
+  "vastgoedbeheer-torremolinos": ["appartement-na-leegstand-openen-torremolinos", ...(relatedBySlug["vastgoedbeheer-torremolinos"] ?? []).filter((slug) => slug !== "appartement-na-leegstand-openen-torremolinos")].slice(0, 6),
+  "schoonmaak-onderhoud-torremolinos": ["appartement-na-leegstand-openen-torremolinos", ...(relatedBySlug["schoonmaak-onderhoud-torremolinos"] ?? []).filter((slug) => slug !== "appartement-na-leegstand-openen-torremolinos")].slice(0, 6),
+});
+
 const contentVisualBySlug: Record<string, { src: string; alt: string }> = {
   "vakantieverhuur-torremolinos": {
     src: "/luxe-woning-torremolinos-zeezicht.webp",
