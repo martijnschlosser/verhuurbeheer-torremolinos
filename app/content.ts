@@ -27,7 +27,74 @@ const rawContentPages:ContentPage[]=[
 ,
 {"slug":"strandappartement-onderhoud-torremolinos","type":"gids","eyebrow":"Praktische gids voor eigenaren","title":"Onderhoud van een strandappartement in Torremolinos tussen verblijven","seoTitle":"Strandappartement Torremolinos beheren | Onderhoud","description":"Zo organiseer je controles, schoonmaak en onderhoud van een strandappartement in Torremolinos tussen eigen verblijf en verhuur.","intro":"Een appartement dicht bij zee wordt vaak intensief gebruikt in korte periodes en staat daarna weer leeg. Met een vaste controle na ieder verblijf en extra aandacht voor buitenruimte, ventilatie en toegang blijft het appartement klaar voor eigen gebruik of een volgende huurder.","sections":[{"title":"Controleer direct na vertrek, niet pas voor aankomst","paragraphs":["Na een gastenwissel of eigen verblijf is zichtbaar wat aandacht nodig heeft. Controleer inventaris, sanitair, keukenapparatuur, ramen, sluitingen en eventuele meldingen van gasten voordat de woning opnieuw wordt afgesloten.","In La Carihuela en El Bajondillo is een soepele toegang voor schoonmaak en onderhoud belangrijk door drukke gebouwen en beperkte parkeermogelijkheden. In Playamar en Los Álamos vragen terrassen en gemeenschappelijke voorzieningen weer om duidelijke controleafspraken."],"bullets":["Inventaris en zichtbare schade","Ramen, deuren en terras","Airconditioning en apparatuur","Sleutels, passen en toegangscodes"]},{"title":"Maak schoonmaak en technische controle twee aparte taken","paragraphs":["Een goede schoonmaak signaleert veel, maar vervangt geen technische woningcheck. Spreek af wie een lekkende kraan, slecht sluitende schuifpui of storing aan de airconditioning vastlegt en wie toestemming vraagt voor herstel.","Door foto’s en meldingen direct na de wissel te verzamelen, kan onderhoud worden gepland vóór de volgende aankomst in plaats van tijdens het verblijf."]},{"title":"Let op ventilatie en buitenruimtes","paragraphs":["Een gesloten appartement kan na een drukke verhuurperiode baat hebben bij gecontroleerde ventilatie en een check op vochtsporen of geuren. Terrasafvoeren, zonwering en buitenmeubilair verdienen eveneens aandacht, vooral wanneer de woning langere tijd niet wordt bezocht.","Welke punten relevant zijn, hangt af van verdieping, ligging en woningtype. Maak daarom een eigen checklist voor het specifieke appartement in Torremolinos."]},{"title":"Koppel onderhoud aan kalenderbeheer","paragraphs":["Blokkeer voldoende tijd tussen reserveringen wanneer een reparatie of deep clean nodig is. De verhuurkalender, schoonmaakplanning en onderhoudsafspraken moeten dezelfde actuele beschikbaarheid gebruiken.","Met lokaal verhuurbeheer kan één aanspreekpunt beslispunten bundelen, terwijl jij controle houdt over kosten en eigen verblijven."]}],"faqs":[["Is schoonmaak hetzelfde als een woninginspectie?","Nee. Schoonmaak richt zich op hygiëne en presentatie; een woninginspectie controleert afgesproken technische en praktische punten."],["Wanneer plan ik onderhoud bij vakantieverhuur?","Zo snel mogelijk na signalering en vóór de volgende reservering, met voldoende ruimte in de kalender."],["Kunnen jullie alleen onderhoud coördineren?","Onderhoudscoördinatie en woningcontrole kunnen ook buiten fullservice verhuurbeheer worden besproken."],["Wat gebeurt er bij schade na een verblijf?","De situatie wordt vastgelegd en teruggekoppeld; vervolgstappen worden volgens de beheerafspraken afgestemd."],["Kan ik mijn appartement ook voor eigen gebruik laten voorbereiden?","Ja, controle en schoonmaak kunnen vóór je aankomst worden ingepland."]]},
 {"slug":"vocht-zoutlucht-appartement-torremolinos","type":"gids","eyebrow":"Praktische gids voor eigenaren","title":"Vocht en zoutlucht beperken in een appartement in Torremolinos","seoTitle":"Vocht in appartement Torremolinos | Beheer aan zee","description":"Voorkom vocht- en zoutschade in een appartement in Torremolinos met gerichte ventilatie, controles, schoonmaak en onderhoud tussen verblijven.","intro":"Dicht bij zee zijn vocht en zouthoudende lucht normale omgevingsfactoren, maar bij een leegstaand of intensief gebruikt appartement kunnen ze onderhoud versnellen. Met gerichte controles en passende ventilatie blijven kleine signalen beter beheersbaar.","sections":[{"title":"Controleer waar buitenlucht de woning raakt","paragraphs":["Kijk naar raamprofielen, schuifpuien, balkonhekken, buitenlampen, airco-units en metalen beslag. Een witte of roestkleurige aanslag, stroef sluitwerk en beschadigde coating zijn signalen om schoonmaak of onderhoud in te plannen.","In La Carihuela, El Bajondillo, Playamar en Los Álamos verschilt de blootstelling per verdieping, windrichting en afstand tot zee. Een vast schema moet daarom bij het appartement passen en niet alleen bij de wijk."],"bullets":["Raam- en deurprofielen","Metalen beslag en balkononderdelen","Airco-roosters en buitenunit","Terrasafvoer en kitnaden"]},{"title":"Ventileer doelgericht tijdens leegstand","paragraphs":["Ramen permanent op een kier laten is niet automatisch verstandig vanwege wind, regen en beveiliging. Plan liever gecontroleerde ventilatiemomenten en beoordeel of airconditioning of ontvochtiging passend is voor de woning.","Controleer ook kasten, textiel, matrassen en hoeken achter meubels. Daar kan een muffe geur of condens eerder merkbaar zijn dan op open oppervlakken. Laat deuren waar passend tijdelijk open tijdens een controle en sluit de woning daarna veilig af."]},{"title":"Reinig voordat aantasting zich vastzet","paragraphs":["Zoutaanslag en zand hechten zich aan glas, rails en buitenoppervlakken. Regelmatige, materiaalgeschikte reiniging helpt slijtage te beperken. Gebruik geen agressief middel zonder te weten welke coating of natuursteen aanwezig is.","Combineer schoonmaak met inspectie: noteer stroef sluitwerk, gescheurde kit, afbladderende verf of water dat niet goed wegloopt. Daarmee wordt schoonmaak een vroeg waarschuwingsmoment voor onderhoud."]},{"title":"Plan onderhoud rond gebruik en verhuur","paragraphs":["Voer kleine werkzaamheden bij voorkeur uit tussen reserveringen of vóór eigen aankomst. Reserveer voldoende tijd voor droging, controle en eventuele nabewerking zodat een snelle gastenwissel niet tot half uitgevoerd werk leidt.","Een lokale beheerder kan toegang, planning en eindcontrole organiseren. Zo hoeft de eigenaar niet op afstand tussen schoonmaker, monteur en comunidad te schakelen."]}],"faqs":[["Is vocht aan zee altijd een bouwkundig probleem?","Nee. Het kan door klimaat, ventilatie of gebruik ontstaan, maar terugkerende of ernstige plekken moeten technisch worden onderzocht."],["Moet de airconditioning tijdens leegstand blijven draaien?","Dat hangt af van installatie, woning en seizoen. Laat een passende instelling bepalen en controleer het systeem periodiek."],["Kunnen jullie alleen woningcontroles uitvoeren?","Ja, controles en onderhoudscoördinatie kunnen los van verhuurbeheer worden besproken."],["Hoe vaak moeten metalen onderdelen worden gecontroleerd?","De frequentie hangt af van ligging en blootstelling; aan zee is vaker controleren doorgaans verstandig."],["Kan dit worden gecombineerd met schoonmaak voor eigen verblijf?","Ja, controle, schoonmaak en voorbereiding kunnen vóór aankomst samen worden gepland."]]}
-
+,
+{
+  "slug": "appartement-na-leegstand-openen-torremolinos",
+  "type": "gids",
+  "eyebrow": "Praktische gids voor eigenaren",
+  "title": "Een appartement in Torremolinos veilig openen na lange leegstand",
+  "seoTitle": "Appartement openen na leegstand Torremolinos",
+  "description": "Checklist om een appartement in Torremolinos na lange leegstand veilig te openen: water, stroom, ventilatie, airco, sanitair en schoonmaak.",
+  "intro": "Na enkele maanden leegstand is het verstandig een appartement niet pas bij aankomst van eigenaar of gasten opnieuw in gebruik te nemen. Een lokale heropeningscheck geeft tijd om vocht, een storing of onderhoudspunt eerst op te lossen.",
+  "sections": [
+    {
+      "title": "Controleer eerst toegang en zichtbare schade",
+      "paragraphs": [
+        "Bekijk portiek, voordeur, ramen, schuifpuien en rolluiken voordat water of apparatuur wordt aangezet. Let op sporen van vocht, zand, windschade en afwijkende geuren.",
+        "In La Carihuela en El Bajondillo verdienen zoutlucht en balkonrails extra aandacht. In Playamar en Los Álamos spelen grotere terrassen, zonwering en buitenafvoeren vaak een grotere rol."
+      ],
+      "bullets": [
+        "Deuren, ramen en rolluiken",
+        "Plafonds, raamhoeken en kasten",
+        "Terrasafvoer en buitenmeubilair",
+        "Meterkast en zichtbare leidingen"
+      ]
+    },
+    {
+      "title": "Activeer water en stroom gecontroleerd",
+      "paragraphs": [
+        "Controleer afsluiters en groepenkast voordat installaties worden aangezet. Open water rustig en kijk bij kranen, toilet, boiler en aansluitingen naar lekkage.",
+        "Test airconditioning, warm water, koelkast en internet afzonderlijk. Noteer storingen en schakel een specialist in wanneer een installatie afwijkend klinkt, ruikt of reageert."
+      ]
+    },
+    {
+      "title": "Ventileer en reinig passend bij de woning",
+      "paragraphs": [
+        "Lucht de woning op een geschikt moment en controleer textiel, matrassen en kasten. Permanent open ramen zijn geen veilige oplossing voor leegstandsventilatie.",
+        "Plan schoonmaak pas nadat duidelijk is dat water, afvoer en apparatuur functioneren. Zo hoeft een schoonmaker niet tijdens het werk een technische storing op te lossen."
+      ]
+    },
+    {
+      "title": "Rond af met een gebruiksklare eindcontrole",
+      "paragraphs": [
+        "Controleer bedlinnen, inventaris, wifi, verlichting en toegangsmiddelen wanneer de woning voor aankomst wordt voorbereid. Maak een korte rapportage van uitgevoerde acties.",
+        "Bij verhuur moet ook de kalender kloppen en moet voldoende tijd zijn voor herstel vóór de volgende gast. Bij eigen gebruik kunnen persoonlijke voorkeuren in een vaste aankomstlijst worden opgenomen."
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "Hoe lang vóór aankomst moet een appartement worden geopend?",
+      "Bij voorkeur enkele dagen vooraf, zodat een storing of schoonmaakpunt nog kan worden opgelost."
+    ],
+    [
+      "Moet water tijdens leegstand worden afgesloten?",
+      "Dat hangt af van woning en installaties; leg de gewenste stand vooraf vast."
+    ],
+    [
+      "Kan airconditioning direct worden aangezet?",
+      "Controleer eerst visueel en test daarna gecontroleerd."
+    ],
+    [
+      "Is een muffe geur altijd schimmel?",
+      "Nee, maar terugkerende vocht- of geurproblemen moeten worden onderzocht."
+    ],
+    [
+      "Kan heropening zonder verhuurbeheer?",
+      "Ja, woningcontrole en voorbereiding kunnen los van verhuur worden afgesproken."
+    ]
+  ]
+}
 ];
 
 export const contentPages: ContentPage[] = rawContentPages.map((page) => {
