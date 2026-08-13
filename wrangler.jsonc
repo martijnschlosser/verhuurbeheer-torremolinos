@@ -3,6 +3,12 @@
   "name": "verhuurbeheer-torremolinos",
   "compatibility_date": "2026-08-07",
   "assets": {
-    "directory": "./out"
-  }
+    "directory": "./out",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "main": "worker/index.ts",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
 }
