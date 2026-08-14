@@ -1,4 +1,5 @@
 import { CookiePreferencesButton } from "./CookieConsent";
+import GeoAuthority, { geoLastReviewed, geoSources } from "./GeoAuthority";
 import {
   BedDouble,
   CalendarDays,
@@ -193,6 +194,21 @@ export default function Home() {
       acceptedAnswer: { "@type": "Answer", text },
     })),
   };
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteConfig.domain}/#webpage`,
+    url: absoluteUrl(),
+    name: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    inLanguage: "nl-NL",
+    dateModified: geoLastReviewed,
+    author: { "@id": `${siteConfig.domain}/#organization` },
+    reviewedBy: { "@id": `${siteConfig.domain}/#organization` },
+    publisher: { "@id": `${siteConfig.domain}/#organization` },
+    isPartOf: { "@id": `${siteConfig.domain}/#website` },
+    citation: [...geoSources],
+  };
   return (
     <main>
       <script
@@ -206,6 +222,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
       <header className="site-header">
         <a
@@ -699,6 +719,8 @@ export default function Home() {
           </small>
         </form>
       </section>
+      <GeoAuthority />
+
       <footer className="site-footer">
         <div className="footer-brand">
           <a className="logo-lockup" href="/" aria-label="Naar Home">
