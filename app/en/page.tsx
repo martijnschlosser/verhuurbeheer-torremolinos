@@ -192,7 +192,7 @@ function LocalizedHome() {
     })),
   };
   return (
-    <main>
+    <main lang="en">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -696,5 +696,5 @@ function LocalizedHome() {
   );
 }
 
-export const metadata = { keywords: ["property management Torremolinos","holiday rental management Torremolinos","Airbnb management Torremolinos","key holding Torremolinos","home checks Torremolinos","second home management Torremolinos","villa management Torremolinos","apartment management Torremolinos"], title: "Property Management Torremolinos | Holiday Rental & Key Holding", description: "Local property management in Torremolinos for international owners: holiday rental management, Airbnb management, key holding, home checks, cleaning and maintenance.", alternates: { canonical: "/en/", languages: { "nl-NL": "/", en: "/en/", es: "/es/", "x-default": "/" } }, openGraph: { locale: "en_GB", url: "/en/", type: "website" as const } };
+export const metadata = { robots: { index: false, follow: true }, keywords: ["property management Torremolinos","holiday rental management Torremolinos","Airbnb management Torremolinos","key holding Torremolinos","home checks Torremolinos","second home management Torremolinos","villa management Torremolinos","apartment management Torremolinos"], title: "Property Management Torremolinos | Holiday Rental & Key Holding", description: "Local property management in Torremolinos for international owners: holiday rental management, Airbnb management, key holding, home checks, cleaning and maintenance.", alternates: { canonical: "/en/", languages: { "nl-NL": "/", en: "/en/", es: "/es/", "x-default": "/" } }, openGraph: { locale: "en_GB", url: "/en/", type: "website" as const } };
 export default LocalizedHome;
