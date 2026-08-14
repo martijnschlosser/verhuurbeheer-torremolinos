@@ -1,5 +1,9 @@
+interface AssetFetcher {
+  fetch(request: Request): Promise<Response>;
+}
+
 interface Env {
-  ASSETS: Fetcher;
+  ASSETS: AssetFetcher;
 }
 
 export default {
@@ -14,4 +18,4 @@ export default {
 
     return env.ASSETS.fetch(request);
   },
-} satisfies ExportedHandler<Env>;
+};
