@@ -16,6 +16,18 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+    const locale = url.pathname === "/en" || url.pathname.startsWith("/en/")
+      ? "en"
+      : url.pathname === "/es" || url.pathname.startsWith("/es/")
+        ? "es"
+        : null;
+    if (locale && response.headers.get("content-type")?.includes("text/html")) {
+      const headers = new Headers(response.headers);
+      headers.delete("content-length");
+      const html = (await response.text()).replace('<html lang="nl"', `<html lang="${locale}"`);
+      return new Response(html, { status: response.status, statusText: response.statusText, headers });
+    }
+    return response;
   },
 };
