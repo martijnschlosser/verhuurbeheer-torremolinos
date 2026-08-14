@@ -281,7 +281,7 @@ function LocalizedHome() {
           </p>
           <h1>Disfruta de tu segunda residencia en Torremolinos. Nosotros nos ocupamos del resto.</h1>
           <p>
-            Desde La Carihuela y La Cala to Torremolinos Pueblo, combinamos una gestión inteligente con profesionales locales de confianza. Tienes un único contacto para reservas, huéspedes, limpieza, mantenimiento y cuidado diario de la vivienda.
+            Desde La Carihuela y La Cala hasta Torremolinos Pueblo, combinamos una gestión inteligente con profesionales locales de confianza. Tienes un único contacto para reservas, huéspedes, limpieza, mantenimiento y cuidado diario de la vivienda.
           </p>
           <div className="actions">
             <a className="btn hero-cta" href="/es/#contact">
@@ -299,7 +299,7 @@ function LocalizedHome() {
           </span>
           <span>
             <CheckCircle2 aria-hidden="true" />
-            <b>Personal</b> contacto
+            <b>Contacto personal</b>
           </span>
           <span>
             <CheckCircle2 aria-hidden="true" />
@@ -391,7 +391,7 @@ function LocalizedHome() {
           <a href="/es/gestion-alquiler-vacacional/">
             <small>Estancias cortas</small>
             <b>Gestión de alquiler vacacional</b>
-            <span>Desde 18% →</span>
+            <span>Desde el 18 % →</span>
           </a>
           <a href="/es/alquiler-temporada/">
             <small>Estancias temporales</small>
@@ -456,7 +456,7 @@ function LocalizedHome() {
           <p className="kicker orange">Cobertura local</p>
           <h2>Conocimiento local en todo Torremolinos</h2>
           <p>
-            Desdeal apartments y golf townhouses to hillside villas, we work throughout Torremolinos Pueblo, La Cala de Torremolinos, La Carihuela, Los Álamos, La Colina, Montemar y Torremolinos Golf.
+            Desdeal apartments y golf townhouses hasta hillside villas, we work throughout Torremolinos Pueblo, La Cala de Torremolinos, La Carihuela, Los Álamos, La Colina, Montemar y Torremolinos Golf.
           </p>
         </div>
         <div className="area-list" aria-label="Zonas atendidas alrededor de Torremolinos">
