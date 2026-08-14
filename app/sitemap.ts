@@ -7,9 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.domain;
   const lastModified = new Date("2026-08-03");
   return [
-    { url: `${base}/`, lastModified, changeFrequency: "weekly", priority: 1, alternates: { languages: { "nl-NL": `${base}/`, en: `${base}/en/`, es: `${base}/es/`, "x-default": `${base}/` } } },
-    { url: `${base}/en/`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9, alternates: { languages: { "nl-NL": `${base}/`, en: `${base}/en/`, es: `${base}/es/`, "x-default": `${base}/` } } },
-    { url: `${base}/es/`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9, alternates: { languages: { "nl-NL": `${base}/`, en: `${base}/en/`, es: `${base}/es/`, "x-default": `${base}/` } } },
+    { url: `${base}/`, lastModified, changeFrequency: "weekly", priority: 1 },
     ...contentPages.map((p) => ({
       url: `${base}/${p.slug}/`,
       lastModified,
