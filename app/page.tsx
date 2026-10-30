@@ -1,3 +1,8 @@
+import type { Metadata } from "next";
+import { homeLanguageAlternates } from "./language-alternates";
+
+export const metadata: Metadata = { alternates: homeLanguageAlternates };
+
 import { CookiePreferencesButton } from "./CookieConsent";
 import GeoAuthority, { geoLastReviewed, geoSources } from "./GeoAuthority";
 import {
