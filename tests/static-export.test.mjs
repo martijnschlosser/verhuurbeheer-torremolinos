@@ -14,3 +14,10 @@ test("homepage contains Torremolinos-local content", () => {
   assert.match(html, /La Carihuela/);
   assert.match(html, /Los Álamos/);
 });
+
+const forbiddenParent = new RegExp(["verhuurbeheer", "spanje"].join("[_ -]?"),"i");
+test("exported contact pages have no parent references or email forms",()=>{
+ for(const path of ["out/index.html","out/en/index.html","out/es/index.html","out/woning-aanmelden/index.html","out/contact/index.html","out/privacyverklaring/index.html","out/bedankt/index.html"]){
+ const html=readFileSync(path,"utf8");assert.doesNotMatch(html,forbiddenParent,path);assert.doesNotMatch(html,/<form\b|mailto:|formsubmit\.co/i,path);assert.match(html,/href=["'](?:tel:|https:\/\/wa\.me\/)/,path);
+ }
+});

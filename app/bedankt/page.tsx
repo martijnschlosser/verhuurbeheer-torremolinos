@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
-import "./thanks.css";
-export const metadata: Metadata = { title: "Bedankt voor uw aanvraag | Verhuurbeheer Torremolinos", robots: { index: false, follow: false } };
-export default function BedanktPage(){return <main className="sunset-thanks"><div className="sun-orbit" aria-hidden="true"><span>✓</span></div><a className="thanks-brand" href="/" aria-label="Terug naar Verhuurbeheer Torremolinos"><img src="/verhuurbeheer-torremolinos-logo.png" alt="Logo Verhuurbeheer Torremolinos" /></a><section className="message-card"><p className="mini-title">¡Perfecto!</p><h1>Hola, bedankt voor<br/>uw aanvraag.</h1><p>Uw bericht is goed ontvangen. We nemen binnen <strong>2 werkdagen</strong> persoonlijk contact met u op.</p><div className="muchas">Muchas gracias <span>☀️</span></div><a href="/">Terug naar de website <b>→</b></a></section><small>Verhuurbeheer Torremolinos · Costa del Sol</small></main>}
+import Link from "next/link";
+import { phoneHref, siteConfig, whatsappHref } from "../site-config";
+export const metadata: Metadata = { title: "Rechtstreeks contact", description: "Neem contact op per telefoon of WhatsApp.", robots: { index: false, follow: false } };
+export default function ContactPage() { return <main className="thanks-page"><section className="thanks-card"><h1>Neem rechtstreeks contact op</h1><p>Bel ons of stuur een WhatsApp-bericht om je woning en wensen te bespreken.</p><p><a className="btn" href={phoneHref}>{siteConfig.contact.phone}</a></p><p><a className="btn" href={whatsappHref()}>WhatsApp →</a></p><Link href="/">Terug naar de website</Link></section></main>; }

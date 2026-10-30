@@ -13,9 +13,8 @@ import {
 } from "lucide-react";
 import {
   absoluteUrl,
-  emailHref,
+  phoneHref,
   leadHref,
-  leadFormAction,
   siteConfig,
   whatsappHref,
 } from "./site-config";
@@ -25,25 +24,25 @@ const homepageTeam = [
     name: "Martijn",
     role: "Relatiemanager",
     image: "/martijn-verhuurbeheer-torremolinos.webp",
-    alt: "Martijn, relatiemanager van Verhuurbeheer Spanje aan de Costa del Sol",
+    alt: "Martijn, relatiemanager van Verhuurbeheer Torremolinos aan de Costa del Sol",
   },
   {
     name: "Geert",
     role: "Manager Bouw",
     image: "/geert-vastgoedbeheer-torremolinos.webp",
-    alt: "Geert, manager bouw en vastgoedbeheer bij Verhuurbeheer Spanje",
+    alt: "Geert, manager bouw en vastgoedbeheer bij Verhuurbeheer Torremolinos",
   },
   {
     name: "Sophie",
     role: "Backoffice",
     image: "/sophie-torremolinos.webp",
-    alt: "Sophie, Nederlandstalig aanspreekpunt bij Verhuurbeheer Spanje",
+    alt: "Sophie, Nederlandstalig aanspreekpunt bij Verhuurbeheer Torremolinos",
   },
   {
     name: "Päivi",
     role: "Administratie",
     image: "/paivi-administratie-verhuurbeheer.webp",
-    alt: "Päivi van de administratie van Verhuurbeheer Spanje",
+    alt: "Päivi van de administratie van Verhuurbeheer Torremolinos",
   },
 ];
 
@@ -134,13 +133,8 @@ export default function Home() {
     "@type": ["Organization", "ProfessionalService"],
     "@id": `${siteConfig.domain}/#organization`,
     name: siteConfig.brand.name,
-    legalName: siteConfig.brand.legalName,
     description:
       "Nederlandstalig fullservice verhuurbeheer, vakantieverhuurbeheer en vastgoedbeheer voor woningeigenaren in Torremolinos.",
-    parentOrganization: {
-      "@type": "Organization",
-      name: "Verhuurbeheer Spanje",
-    },
     areaServed: [
       { "@type": "City", name: "Torremolinos" },
       { "@type": "Place", name: "Torremolinos Centro" },
@@ -154,14 +148,10 @@ export default function Home() {
       { "@type": "Place", name: "El Calvario" },
       { "@type": "Place", name: "Cortijo de Maza" },
     ],
-    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.phone,
     url: absoluteUrl(),
     logo: absoluteUrl("/verhuurbeheer-torremolinos-logo.png?v=torremolinos-20260805"),
     image: absoluteUrl("/luxe-woning-torremolinos-zeezicht.webp"),
-    sameAs: [
-      siteConfig.social.instagram,
-      siteConfig.social.facebook,
-    ],
     knowsLanguage: ["nl", "en", "es"],
     knowsAbout: [
       "Verhuurbeheer Torremolinos",
@@ -646,8 +636,8 @@ export default function Home() {
             bij je situatie passen.
           </p>
           <p>
-            <a href={emailHref}>
-              {siteConfig.contact.email}
+            <a href={phoneHref}>
+              {siteConfig.contact.phone}
             </a>
           </p>
           <ul>
@@ -657,65 +647,7 @@ export default function Home() {
           </ul>
           <a className="btn" href={leadHref}>Meld je woning aan →</a>
         </div>
-        <form
-          action={leadFormAction}
-          method="post"
-        >
-          <input type="hidden" name="_subject" value="Nieuwe lead via Verhuurbeheer Torremolinos – homepage" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
-          <input type="hidden" name="bron_website" value="verhuurbeheertorremolinos.nl" />
-          <input type="hidden" name="bron_formulier" value="Homepage" />
-          <label>
-            Naam
-            <input name="naam" required />
-          </label>
-          <label>
-            E-mailadres
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Type woning
-            <select name="type">
-              <option>Appartement</option>
-              <option>Villa</option>
-              <option>Townhouse</option>
-              <option>Anders</option>
-            </select>
-          </label>
-          <label>
-            Gewenste verhuurvorm
-            <select name="verhuurvorm">
-              <option>Vakantieverhuur</option>
-              <option>Midterm</option>
-              <option>Langetermijn</option>
-              <option>Vastgoedbeheer</option>
-            </select>
-          </label>
-          <label className="wide">
-            Is er al een verhuurlicentie?
-            <select name="verhuurlicentie" defaultValue="">
-              <option value="" disabled>
-                Kies een antwoord
-              </option>
-              <option>Ja</option>
-              <option>Nee</option>
-              <option>In aanvraag</option>
-              <option>Niet van toepassing / weet ik niet</option>
-            </select>
-          </label>
-          <label className="wide">
-            Locatie en korte omschrijving
-            <textarea name="woning" rows={4} />
-          </label>
-          <button className="btn wide form-cta" type="submit">
-            Vraag je prognose aan →
-          </button>
-          <small className="wide privacy-note">
-            Wij verwerken je gegevens volgens onze{" "}
-            <a href="/privacyverklaring/">privacyverklaring</a>.
-          </small>
-        </form>
+        <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}>Bel ons · {siteConfig.contact.phone}</a></p><p><a className="btn" href={whatsappHref()}>Stuur een WhatsApp-bericht →</a></p></div>
       </section>
       <GeoAuthority />
 
@@ -733,31 +665,8 @@ export default function Home() {
               Verhuurbeheer <b>Torremolinos</b>
             </span>
           </a>
-          <p>
-            Verhuurbeheer Torremolinos is onderdeel van{" "}
-            <span>
-              Verhuurbeheer Spanje
-            </span>
-            .
-          </p>
-          <div className="social-links">
-            <a
-              href={siteConfig.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Instagram"
-            >
-              <Instagram aria-hidden="true" /> Instagram
-            </a>
-            <a
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Facebook"
-            >
-              <Facebook aria-hidden="true" /> Facebook
-            </a>
-          </div>
+          
+          
         </div>
         <div>
           <b>Diensten</b>
@@ -782,7 +691,7 @@ export default function Home() {
           <a href={whatsappHref()}>
             WhatsApp
           </a>
-          <a href={emailHref}>E-mail</a>
+          <a href={phoneHref}>Telefoon</a>
           <small>© 2026 · Torremolinos · Costa del Sol</small>
         </div>
       </footer>
