@@ -619,7 +619,7 @@ export default async function ContentRoute({
               <span><CheckCircle2 aria-hidden="true" /><b>Nederlandstalig</b><small>Een helder gesprek</small></span>
             </div>
           </div>
-          <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}><span aria-hidden="true">☎</span><span>Bel ons · {siteConfig.contact.phone}</span></a></p><p><a className="btn" href={whatsappHref()}><span aria-hidden="true">↗</span><span>Stuur een WhatsApp-bericht</span></a></p></div>
+          <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}><span aria-hidden="true">☎</span><strong>Bel ons · {siteConfig.contact.phone}</strong></a></p><p><a className="btn" href={whatsappHref()}><span aria-hidden="true">↗</span><strong>Stuur een WhatsApp-bericht</strong></a></p></div>
         </section>
       )}
       {page.slug === "contact" && (
@@ -641,7 +641,7 @@ export default async function ContentRoute({
               </a>
             </div>
           </div>
-          <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}><span aria-hidden="true">☎</span><span>Bel ons · {siteConfig.contact.phone}</span></a></p><p><a className="btn" href={whatsappHref()}><span aria-hidden="true">↗</span><span>Stuur een WhatsApp-bericht</span></a></p></div>
+          <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}><span aria-hidden="true">☎</span><strong>Bel ons · {siteConfig.contact.phone}</strong></a></p><p><a className="btn" href={whatsappHref()}><span aria-hidden="true">↗</span><strong>Stuur een WhatsApp-bericht</strong></a></p></div>
         </section>
       )}
       {page.slug === "blog" && featuredBlog ? (
@@ -853,7 +853,7 @@ export default async function ContentRoute({
               </a>
             </div>
           </div>
-          <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}><span aria-hidden="true">☎</span><span>Bel ons · {siteConfig.contact.phone}</span></a></p><p><a className="btn" href={whatsappHref()}><span aria-hidden="true">↗</span><span>Stuur een WhatsApp-bericht</span></a></p></div>
+          <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}><span aria-hidden="true">☎</span><strong>Bel ons · {siteConfig.contact.phone}</strong></a></p><p><a className="btn" href={whatsappHref()}><span aria-hidden="true">↗</span><strong>Stuur een WhatsApp-bericht</strong></a></p></div>
         </section>
       )}
       {page.slug !== "contact" && page.slug !== "woning-aanmelden" && (
