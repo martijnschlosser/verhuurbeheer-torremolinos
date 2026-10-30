@@ -581,7 +581,7 @@ function LocalizedHome() {
           <a href="/over-ons/">About us</a>
           <a href="/blog/">Guides</a>
           <a href="/en/#contact">Contact</a>
-          <a href="/privacy policy/">Privacy policy</a>
+          <a href="/privacyverklaring/">Privacy policy</a>
           <a href="/cookieverklaring/">Cookie policy</a>
           <CookiePreferencesButton />
         </div>
