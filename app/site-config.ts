@@ -9,7 +9,6 @@ export const siteConfig = {
   brand: {
     name: "Verhuurbeheer Torremolinos",
     legalName: "Verhuurbeheer Spanje",
-    parentUrl: "https://www.verhuurbeheerspanje.nl/",
   },
   location: {
     city: "Torremolinos",
