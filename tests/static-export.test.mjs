@@ -1,8 +1,22 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
 
 const required = ["out/index.html","out/woning-aanmelden/index.html","out/bedankt/index.html","out/sitemap.xml","out/robots.txt","out/verhuurbeheer-torremolinos-logo.png"];
+
+test("every local image in the exported HTML exists", () => {
+  const walk = dir => readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+    const path = `${dir}/${entry.name}`;
+    return entry.isDirectory() ? walk(path) : path.endsWith(".html") ? [path] : [];
+  });
+  for (const page of walk("out")) {
+    for (const [, src] of readFileSync(page, "utf8").matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)) {
+      if (!src.startsWith("/")) continue;
+      const path = new URL(src, "https://verhuurbeheertorremolinos.nl").pathname;
+      assert.ok(existsSync(`out${path}`), `${page}: missing image ${path}`);
+    }
+  }
+});
 
 test("exports the required Torremolinos pages and SEO files", () => {
   for (const path of required) assert.ok(existsSync(path), `missing ${path}`);

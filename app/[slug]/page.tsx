@@ -260,27 +260,27 @@ const contentVisualBySlug: Record<string, { src: string; alt: string }> = {
     alt: "Luxe vakantiewoning in Torremolinos met lichte woonkamer en uitzicht op zee",
   },
   "midterm-verhuur-torremolinos": {
-    src: "/woning-interieur-estepona.webp",
+    src: "/woning-interieur-torremolinos.webp",
     alt: "Licht ingericht appartement voor seizoens- en midtermverhuur in Torremolinos",
   },
   "langetermijnverhuur-torremolinos": {
-    src: "/zonnig-terras-zeezicht-estepona.webp",
+    src: "/zonnig-terras-zeezicht-torremolinos.webp",
     alt: "Verzorgd interieur van een woning voor langetermijnverhuur in Torremolinos",
   },
   "vastgoedbeheer-torremolinos": {
-    src: "/urbanisatie-zwembad-estepona.webp",
+    src: "/urbanisatie-zwembad-torremolinos.webp",
     alt: "Zwembad en mediterrane tuin bij een professioneel beheerde villa in Torremolinos",
   },
   "schoonmaak-onderhoud-torremolinos": {
-    src: "/luxe-interieur-estepona.webp",
+    src: "/luxe-interieur-torremolinos.webp",
     alt: "Schoon en verzorgd interieur van een beheerde woning in Torremolinos",
   },
   "renovatie-inrichting-torremolinos": {
-    src: "/torremolinos-property.webp",
+    src: "/terras-zonsondergang-torremolinos.webp",
     alt: "Luxe terras van een ingerichte woning in Torremolinos bij zonsondergang",
   },
   werkwijze: {
-    src: "/terras-zonsondergang-estepona.webp",
+    src: "/terras-zonsondergang-torremolinos.webp",
     alt: "Zonnig terras van een beheerde vakantiewoning in Torremolinos met zeezicht",
   },
 };
@@ -290,19 +290,19 @@ const blogVisualBySlug: Record<
   { src: string; alt: string; category: string; readTime: string }
 > = {
   "kosten-verhuurbeheer-torremolinos": {
-    src: "/vastgoed-aan-zee-estepona.webp",
+    src: "/vastgoed-aan-zee-torremolinos.webp",
     alt: "Woningen aan zee bij Torremolinos als illustratie bij de kosten van verhuurbeheer",
     category: "Kosten & tarieven",
     readTime: "4 min",
   },
   "dynamische-prijzen-vakantiewoning": {
-    src: "/luxe-torremolinos-property.webp",
+    src: "/luxe-woning-torremolinos-zeezicht.webp",
     alt: "Luxe vakantiewoning met zeezicht in Torremolinos voor een blog over dynamische prijzen",
     category: "Opbrengst",
     readTime: "4 min",
   },
   "zelf-verhuren-of-verhuurbeheer": {
-    src: "/woning-interieur-estepona.webp",
+    src: "/woning-interieur-torremolinos.webp",
     alt: "Verzorgd interieur van een vakantiewoning bij een blog over zelf verhuren of uitbesteden",
     category: "Keuzehulp",
     readTime: "5 min",
